@@ -1,0 +1,35 @@
+. {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    font-family: 'Playfair Display', serif;
+    color: rgba(98, 98, 98, 255);
+    width: 1200px;
+ 	margin: auto;
+ 	padding: 90px 0;
+ 	outline: 1px solid #acacac;
+}
+.menu {
+    display: inline-block;
+}
+.content {
+    display: inline-block;
+	width: 470px;
+	margin-right: 16px;
+	margin-bottom: 100px;
+
+    text-align: none;
+    display: inline-block;
+    width: 400px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+}
+.article-name {
+    display: block;
+}
+
+.photo {
+    margin-bottom: 40px;
+}
