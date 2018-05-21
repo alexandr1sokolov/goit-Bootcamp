@@ -1,50 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.wrapper {
-    font-family: 'Open Sans', sans-serif;
-    color: #555252;
-    width: 1645px;
-    height: 1831px;
-}
 
-.header-menu {
-display:inline-block;
-}
 
-.logo {
-    font-size: 20px;
-    text-transform: uppercase;
-    display: inline-block;
-    width: 80px;
-    margin-top: 20px;
-    margin-left: 260px;
-}
-.logo::first-letter {
-    color: #1abc9c;
-}
-
-.menu-item {
-    font-size: 10px;
-    text-transform: uppercase;
-}
-
-.header-element {
-    margin: auto;
-    text-align: center;
-    font-size: 35px;
-    text-transform: uppercase;
-}
-
-.header-element::after {
-    content: '';
-    margin: auto;
-    display: block;
-    width: 170px;
-    height: 8px;
-    text-align: center;
-    background-color: #1abc9c;
-}
+@import "reset.css";
+@import "header.css";
+@import "main.css"
