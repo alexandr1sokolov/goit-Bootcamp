@@ -3,6 +3,11 @@
     color: #555252;
     width: 1114px;
     margin: auto;
+    padding-top: 45px;
+}
+
+header-menu {
+    padding-top: 20px;
 }
 
 .logo {
@@ -11,8 +16,7 @@
     font-size: 30px;
     text-transform: uppercase;
     float: left;
-    width: 80px;
-    padding-top: 20px;
+    width: 80px;    
 }
 .logo::first-letter {
     color: #1abc9c;
@@ -20,7 +24,6 @@
 
 .menu {
     float:right;
-    padding-top: 45px;
     margin-bottom: 110px; 
 }
 
