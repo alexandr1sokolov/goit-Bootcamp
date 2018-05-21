@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.page1 {
+    width: 1920px;
+    height: 850px;
+    background-color: #23232e;
+}
+.logo {
+    display: block;
+    padding-top: 80px;
+    width: 135px;
+    margin:auto;
+    margin-bottom: 185px;
+}
+.lozung1 {
+    display: block;
+    width: 545px;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    margin:auto;
+    margin-bottom: 70px;
+}
+.welcome {
+    font-size: 18px;
+    text-align: center;
+    width:420px;
+    color:#fff;
+    margin:auto;
+    margin-bottom: 20px;
+}
+
+.welcome1 {
+    font-size: 18px;
+    text-align: center;
+    width:420px;
+    color:#fff;
+    margin:auto;
+    margin-bottom: 90px;
+}
+
+.logo2 {
+    display: block;
+    width: 45px;
+    margin: auto;
+}
+
+.page2 {
+    width: 1920px;
+    height: 1040px;
+    background-image: url(../img/background2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bio{
+    display: block;
+    width: 850px;
+    font-size: 32px;
+    text-align: center;
+    color: #464b4f;
+    padding-top: 120px;
+    margin: auto;
+    margin-bottom: 70px;
+
+}
+.bio2 {display: block;
+    width: 850px;
+    font-size: 32px;
+    text-align: center;
+    color: #464b4f;
+    margin: auto;
+    margin-bottom: 120px;    
+}
+
+.lozung {
+    display: block;
+    width: 545px;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #464b4f;
+    margin:auto;
+    margin-bottom: 70px;
+}
+
+.horizontal {
+    display: inline-block;
+}
+
+.menu-1 {
+    display: block;
+    width: 940px;
+    margin: auto;
+}
+
+
+.my-work {
+    
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #464b4f;
+    
+}
+
+.my-w-description {
+    display: inline-block;
+    width: 290px;
+    font-size: 18px;
+    color: #464b4f;
+}
+
+.page3 {
+    width: 1920px;
+    height: 850px;
+    background-color: #23232e;
+}
+
+lozung3 {
+    display: block;
+    width: 545px;
+    font-size: 60px;
+    padding-top: 125px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    margin:auto;
+    margin-bottom: 70px;
+}

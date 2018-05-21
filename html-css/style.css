@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+ul {
+    list-style: none;
+}
+.wrapper {
+    background-image: url('img/bg.jpg');
+    background-color: #0000ff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0;
+}
+
+.container {
+    background-color: #fff;
+    width: 480px;
+    margin: auto;
+    padding: 60px 37px 44px;  
+    font-family: Arial, sans-serif;  
+}
+
+.title {
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #263555;
+    margin-bottom: 27px;
+}
+
+.plane {
+    display: block;
+    margin: 0 auto 27px;
+    
+}
+
+.sub-title{
+    color: #263555;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.text {
+    color: #4e5050;
+    font-size: 12px;
+}
+.article {
+    margin-bottom: 51px;
+}
+
+.list-item {
+    margin-bottom: 25px;
+}
+
+list.item:last-child {
+    margin-bottom: 0;
+}
+
+.article-border {
+    border-bottom: 1px solid #000;
+    padding-bottom: 52px;
+}
+
+.bottom {
+    margin-bottom: 37px;
+}
+
+.offer-item {
+    color: #263555;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+.offer-list {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.offer-list:last-child {
+    margin-left: 50px;
+}
+
+.offer-item:last-child {
+    margin-bottom:0;
+}
