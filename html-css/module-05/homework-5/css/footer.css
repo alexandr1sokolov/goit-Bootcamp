@@ -1,0 +1,14 @@
+.footer-wrapper {
+background-color: #323232;
+}
+
+.contacts {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding:38px 0;
+}
+
+.author {
+    color: #46bfa9;
+}

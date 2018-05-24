@@ -1,7 +1,11 @@
-                                     /* PRODUCTS part */
-.products {
-    margin: auto;;
+/* PRODUCTS part */
+
+
+.products-segment {
     margin-bottom: 105px;
+}
+.products {
+    margin: auto;
 }
 
 .product-card {
@@ -54,6 +58,9 @@
 }
 
 /* NEWS part */
+.news-segment {
+    margin-bottom: 80px;
+}
 
 .news-article {
     float: left;
@@ -103,7 +110,7 @@
     border: none;
     border-radius: 5px;
     background-color: #4ec6ab;
-    margin-bottom: 80px;
+    
 }
 
 
