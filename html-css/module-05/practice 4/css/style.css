@@ -1,0 +1,107 @@
+@import "variables.css";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+.wrapper {
+    font-size: var(--font-sz);
+    background-color: #eaeaea;
+    height: 1000px;
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.menu-item {
+    display: inline-block;
+    position: relative;
+    left:50px;
+    top:50px;
+    padding: 20px 110px 20px 20px;
+    border-radius: 4px;
+    background-color: red;
+}
+
+.menu-item:hover>.sub-menu-lvl-1{
+    cursor: pointer;
+    display: block;
+}
+
+.sub-menu-lvl-1 {
+    position:absolute;
+    display: none;
+    top: 100%;
+    width: 100%;
+    left: 0;
+}
+
+.sub-menu-lvl-1-1 {
+    padding: 20px 110px 20px 20px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.sub-menu-lvl-2 {
+    position: absolute;
+    left:190px;
+    top:120px;
+    display: none;
+    width: 100%;
+}
+
+.sub-menu-lvl-1-1:hover>.sub-menu-lvl-2 {
+    display: block;
+    cursor: pointer;
+}
+
+.sub-menu-lvl-2-1 {
+    padding: 20px 110px 20px 20px;
+    background-color: #fff;
+    margin-bottom: 5px;
+
+}
+
+.sub-menu-lvl-2-1:hover>.sub-menu-lvl-3 {
+    display: block;
+    cursor: pointer;
+}
+
+.sub-menu-lvl-3 {
+    position: absolute;
+    left:190px;
+    top:120px;
+    display: none;
+    width: 110%;
+
+}
+.sub-menu-lvl-3-1 {
+    padding: 20px 110px 20px 20px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.sub-menu-lvl-4 {
+    position: absolute;
+    left:210px;
+    top:0px;
+    display: none;
+    width: 100%;
+}
+
+.sub-menu-lvl-3-1:hover>.sub-menu-lvl-4 {
+    display: block;
+    cursor: pointer;
+}
+
+.sub-menu-lvl-4-1 {
+    padding: 20px 110px 20px 20px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
