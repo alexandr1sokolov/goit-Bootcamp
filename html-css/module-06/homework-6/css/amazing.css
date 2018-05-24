@@ -1,0 +1,66 @@
+.amazing-preheader{
+    display: block;
+    text-align: center;
+    font-family: 'Kaushan Script';
+    font-style: italic;
+    font-size: 24px;
+    color: #333333;
+    padding-top: 178px;
+    margin-bottom: 22px;
+}
+
+.amaizing-header {
+    display: block;
+    text-align: center;
+    font-size: 30pt;
+    text-transform: uppercase;
+    color: #333333;
+}
+
+.amaizing-header::after {
+    content: '';
+    margin: auto;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #f38181;
+    margin-top: 40px;
+    margin-bottom: 66px;
+}
+
+
+.sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.sections-box {
+    display: flex;
+    flex-basis: 340px;
+    
+}
+
+.img-container{
+    padding-right: 30px;
+    
+}
+/* .text-container{
+    
+} */
+
+
+.section-name{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+
+.section-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #b3b3b3;
+    padding-bottom: 105px;
+}

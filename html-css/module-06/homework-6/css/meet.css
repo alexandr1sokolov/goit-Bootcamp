@@ -1,0 +1,81 @@
+.meet-preheader {
+    display: block;
+    text-align: center;
+    font-family: 'Kaushan Script';
+    font-style: italic;
+    font-size: 24px;
+    color: #333333;
+    padding-top: 178px;
+    margin-bottom: 22px;
+}
+
+.meet-header {
+    display: block;
+    text-align: center;
+    font-size: 30pt;
+    text-transform: uppercase;
+    color: #333333;
+}
+
+.meet-header::after {
+    content: '';
+    margin: auto;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #f38181;
+    margin-top: 40px;
+    margin-bottom: 66px;
+}
+
+.meet-text {
+    display: block;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #b3b3b3;
+    text-align: center;
+    width: 945px;
+    margin-bottom: 95px;
+}
+
+.teem-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.meet-box {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.specialist-photo {
+    height: 473px;
+    flex-basis: 383px;
+}
+
+.specialist-photo:hover {
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(149,225,211,1);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(149,225,211,1);
+    box-shadow: 10px 10px 0px 0px rgba(149,225,211,1);
+}
+
+.specialist {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    text-align: center;
+    
+}
+
+.job-position {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #dcdcdc;
+    text-align: center;
+    padding-bottom: 145px;
+}
