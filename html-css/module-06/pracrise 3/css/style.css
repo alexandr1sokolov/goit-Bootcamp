@@ -1,27 +1,66 @@
 .simple {
-    background: #91877b;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-  }
+    background-color: #91877b;
+    color: #202c2d;
+    transition: 2s;
+    text-shadow:
+            0 1px #cdd2d5,
+            -1px 0 #cdd2d5,
+            -1px 2px #cdd2d5,
+            -2px 1px #cdd2d5,
+            -2px 3px #cdd2d5,
+            -3px 2px #cdd2d5,
+            -3px 4px #cdd2d5,
+            -4px 3px #cdd2d5,
+            -4px 5px #cdd2d5,
+            -5px 4px #cdd2d5,
+            -5px 6px #cdd2d5,
+            -6px 5px #cdd2d5,
+            -6px 7px #cdd2d5,
+            -7px 6px #cdd2d5,
+            -7px 8px #cdd2d5,
+            -8px 7px #cdd2d5;
+}
+.simple:hover {
+    text-shadow:
+            0 1px #cdd2d5,
+            1px -0 #cdd2d5,
+            1px -2px #cdd2d5,
+            2px -1px #cdd2d5,
+            2px -3px #cdd2d5,
+            3px -2px #cdd2d5,
+            3px -4px #cdd2d5,
+            4px -3px #cdd2d5,
+            4px -5px #cdd2d5,
+            5px -4px #cdd2d5,
+            5px -6px #cdd2d5,
+            6px -5px #cdd2d5,
+            6px -7px #cdd2d5,
+            7px -6px #cdd2d5,
+            7px -8px #cdd2d5,
+            8px -7px #cdd2d5;
+}
 
+body {
+    background-color: #eee;
+}
+.box h3 {
+    text-align: center;
+    position: relative;
+    top: 80px;
+}
+.box {
+    width: 70%;
+    height: 200px;
+    background: #FFF;
+    margin: 40px auto;
+    border-radius: 4px;
+}
+.effect1{
+    box-shadow: 0 1px 28px 9px rgba(0,0,0,1);
+    transition: 2s;
+}
+.effect1:hover {
+    box-shadow: 0 1px 28px 19px rgba(0,0,0,1);
+    transform: translate(50px, 50px) rotate(720deg) scale(0.5);
 
-.close {
-  background-color: #fff;   
-  color: #202c2d;
-  text-shadow:
-    0 1px #808d93,
-    -1px 0 #cdd2d5,
-    -1px 2px #808d93,
-    -2px 1px #cdd2d5,
-    -2px 3px #808d93,
-    -3px 2px #cdd2d5,
-    -3px 4px #808d93,
-    -4px 3px #cdd2d5,
-    -4px 5px #808d93,
-    -5px 4px #cdd2d5,
-    -5px 6px #808d93,
-    -6px 5px #cdd2d5,
-    -6px 7px #808d93,
-    -7px 6px #cdd2d5,
-    -7px 8px #808d93,
-    -8px 7px #cdd2d5;
 }

@@ -1,0 +1,51 @@
+
+@font-face {
+    font-family: 'Mistral W02';
+    src: url('../fonts/Mistral\ W02/Mistral W02.woff2')format('woff2'), 
+    url('../fonts/Mistral\ W02/Mistral W02.woff')format('woff2'),
+    url('../fonts/Mistral\ W02/Mistral W02.ttf')format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SENYUM V1';
+    src: url('../fonts/SENYUM\ V1/SENYUM\ V1.woff2')format('woff2'), 
+    url('../fonts/SENYUM\ V1/SENYUM\ V1.woff')format('woff'),
+    url('../fonts/SENYUM\ V1/SENYUM\ V1.ttf')format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Velvet Teen W01 Regular';
+    src: url('../fonts/Velvet\ Teen\ W01\ Regular/Velvet\ Teen\ W01\ Regular.woff2')format('woff2'), 
+    url('../fonts/Velvet\ Teen\ W01\ Regular/Velvet\ Teen\ W01\ Regular.woff')format('woff'),
+    url('../fonts/Velvet\ Teen\ W01\ Regular/Velvet\ Teen\ W01\ Regular.ttf')format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+h2 {
+    display: block;
+    font-family: 'SENYUM V1',sans-serif;;
+    font-size: 30px;
+    width: 1000px;
+    text-align: center;
+}
+
+p {
+    margin: auto;
+    padding-top: 200px;
+    font-family: 'Mistral W02', sans-serif;
+    font-weight: 300;
+    text-align: justify;
+    width: 1000px;
+    
+}
+
+.bold {
+    font-family: 'Velvet Teen W01 Regular', sans-serif;
+    font-weight: 700;
+}
