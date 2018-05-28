@@ -1,0 +1,103 @@
+.contacts-wrapper {
+    background-image: url(../img/map.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 7.1875rem;
+}
+
+.contacts-header {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 6.875rem;
+    margin-bottom: 1.5625rem;
+}
+
+.contacs-description {
+    color: #777777;
+    text-align: center;
+    margin-bottom: 4.6875rem;
+}
+
+.forms-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .left-side {
+    width: 48.9%;
+}
+
+.right-side {
+    width: 48.9%;
+} */
+
+#name-input {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #bbbbbb;
+    padding: 1.1875rem 15rem 1.3125rem 1.25rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5625rem;
+    margin-right: 1.5625rem;
+}
+
+#email-input {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #bbbbbb;
+    padding: 1.1875rem 15rem 1.3125rem 1.25rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5625rem;
+    margin-right: 1.5625rem;
+}
+
+#subject-input {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #bbbbbb;
+    padding: 1.1875rem 15rem 1.3125rem 1.25rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5625rem;
+    margin-right: 1.5625rem;
+}
+
+#message-input {
+    width: 100%;
+    min-height: 14.525rem; 
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #bbbbbb;
+    padding: 1.1875rem 15rem 1.3125rem 1.25rem;
+    border-radius: 0.25rem;
+}
+
+.mbatton {
+    display: block;
+    margin: auto;
+}
+
+#send-button {
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 0.25rem;
+    background: #fed136;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #fff;
+    padding: 1.563rem 2.938rem  1.688rem 2.938rem;
+}
+
