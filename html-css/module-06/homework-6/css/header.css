@@ -49,6 +49,7 @@
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
+<<<<<<< HEAD
     transition: 1s;
 }
 
@@ -57,10 +58,19 @@
     display: block;
     content: '';
     opacity: 0;
+=======
+}
+
+.menu-button::after {
+    /* display: block; */
+    content: '';
+    display: none;
+>>>>>>> 9d7d7f98bea95f5d994dbf0ff6e159ffdbfa78de
     height: 3px;
     width: 50px;
     margin: auto;
     background-color: #f38181;
+<<<<<<< HEAD
     margin-top: 12px;
 }
 
@@ -69,6 +79,8 @@
     /* display: block; */
     content: '';
     opacity: 1;
+=======
+>>>>>>> 9d7d7f98bea95f5d994dbf0ff6e159ffdbfa78de
 }
 
 .menu-button:hover {
