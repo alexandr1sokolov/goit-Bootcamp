@@ -1,0 +1,16 @@
+.wrapper-header {
+    background-color: #000;
+}
+
+.logo{
+    display: inline-block;
+    background-color: #009688;
+    padding: 0.5rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9375rem;
+    color: #fff;
+}
+
+.nav {
+    display: none;
+}

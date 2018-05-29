@@ -1,0 +1,40 @@
+.wrapper-work {
+    background-color: #333;
+    padding: 4rem 0;
+}
+
+.work-item {
+    padding-bottom: 1rem;
+    color: #fff;
+}
+
+.work-item .text {
+    line-height: 1.5rem;
+    font-weight: 300;
+}
+
+.title-white {
+    text-align-last: left;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.title-work {
+    text-align:left;
+    text-transform: uppercase;
+}
+
+.card-pic {
+    width: 100%;
+}
+
+.card-info {
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.card-title {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
