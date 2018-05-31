@@ -1,5 +1,6 @@
 .products-wrapper {
     background-color: #e9f0fd;
+    padding-bottom: 100px;
 }
 
 .header-element {
@@ -11,10 +12,6 @@
     text-transform: uppercase;
     margin-bottom: 90px;
     padding-top: 100px;
-}
-
-.products{
-    padding-bottom: 100px;
 }
 
 .product-image {
