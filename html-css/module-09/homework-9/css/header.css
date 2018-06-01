@@ -1,0 +1,32 @@
+.banner-wrapper {
+    background-image: url(../img/banner-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 17.5rem;
+    display: grid;
+    grid-template-areas:
+    'x a b x'
+    'x x x x'
+    'x c c x'
+    'd d d d'
+    'e e e e'
+    'f f f f'
+    'x x x x'
+    'x x x x';
+}
+/* x=4.5rem */
+
+.logo {
+    display: none;
+}
+
+.log {
+    grid-area: a;
+}
+
+.sign {
+    grid-area: b;
+}
