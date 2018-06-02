@@ -1,0 +1,105 @@
+.partner-wrapper {
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 4.375rem 0 3.4375rem;
+}
+
+.partner__header {
+    font-size: 1.375rem;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 1.25rem;
+
+}
+
+.partner {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.partner__box{
+    display: flex;
+    flex-flow: column;
+    flex-basis: 100%;
+
+}
+
+.card {
+    margin: auto;
+    margin-bottom: 1.5625rem;
+}
+
+.card__photo {
+    display: block;
+    margin: auto;
+    margin-bottom: 0.875rem;
+}
+
+.card__name {
+    font-size: 0.875rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 0.875rem;
+}
+
+.card__description{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #8f8f8f;
+    text-align: center;
+}
+
+.banner__button--partner {
+    color:#ff4e50;
+    background-color: transparent;
+    border: 0.125rem solid #ff4e50;
+}
+
+@media (min-width: 768px) {
+    .partner__box {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content:space-around;
+        align-content: flex-start;
+
+    }
+
+    .card {
+        display: flex;
+        flex-basis: 43%;
+        align-items: flex-start;
+
+    }
+
+    .card--first{
+        order: 1;
+    }
+
+    .card--second{
+        order:3;
+    }
+
+    .card--third {
+        order:2;
+    }
+
+    .card--fourth {
+        order:4;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card{
+        flex-basis: 24%;
+    }
+
+    .card--second{
+        order:2;
+    }
+
+    .card--third {
+        order:3;
+    }
+}
