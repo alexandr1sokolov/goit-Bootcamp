@@ -70,6 +70,8 @@
         display: flex;
         flex-basis: 43%;
         align-items: flex-start;
+        padding-bottom: 3.5625rem;
+        margin: initial;
 
     }
 
@@ -91,8 +93,14 @@
 }
 
 @media (min-width: 1024px) {
+    .container {
+        width: 63rem;
+    }
+
     .card{
         flex-basis: 24%;
+        margin: initial;
+
     }
 
     .card--second{
