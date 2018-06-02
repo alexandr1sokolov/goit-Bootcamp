@@ -1,32 +1,200 @@
 .banner-wrapper {
-    background-image: url(../img/banner-mobile.png);
+    background-image: url(../img/banner.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    padding: 1.3125rem 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    height: 542px;
+    margin: auto;
 }
 
 .container {
     width: 17.5rem;
+    margin: auto;
+}
+
+.header {
+    margin: auto;
     display: grid;
-    grid-template-areas:
-    'x a b x'
-    'x x x x'
-    'x c c x'
-    'd d d d'
-    'e e e e'
-    'f f f f'
-    'x x x x'
-    'x x x x';
-}
-/* x=4.5rem */
-
-.logo {
-    display: none;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: 1fr;
 }
 
-.log {
-    grid-area: a;
+.header__logo {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column: 1 / span 2;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
 }
 
-.sign {
-    grid-area: b;
+.header__link {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    color:#fff;
+
+}
+
+.header__menu {
+    margin: auto;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+ .header__menu-item {
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.625rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 1.875rem;
+    transition:1s;
+ }
+
+.header__menu-item-left {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column: 1;
+}
+
+.header__menu-item-right {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column: 2;
+}
+
+.header__menu-item:hover {
+    border: 2px solid #fff;
+    border-radius: 1.875rem;
+
+}
+
+.banner__content {
+    display: grid;
+
+    justify-content: center;
+}
+
+.banner__header {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    /*margin-bottom: 1.25rem;*/
+}
+
+.banner__header-top {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column: 1;
+}
+
+.banner__header-bottom {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column: 1;
+}
+
+.banner__header:first-child {
+    margin-bottom: 0;
+}
+
+.banner__text{
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column: 1;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+
+.banner__button {
+    font-size: 0.775rem;
+    color:#fff;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ff4e50;
+    padding: 1rem 3.4375rem;
+    border-radius: 2rem;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    grid-column: 1;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 41.875rem;
+    }
+
+
+
+    .header {
+        display: grid;
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-columns: repeat(10, 1fr);
+        justify-content: space-between;
+        margin-bottom: 8rem;
+    }
+
+    .nav{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 7;
+        grid-column-end: 11;
+    }
+
+    .header__logo {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        margin-bottom: 0;
+    }
+
+    .banner__header-top{
+        grid-row-start: 4;
+        grid-row-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 9;
+    }
+    .banner__header-bottom {
+        grid-row-start: 5;
+        grid-row-end: 7;
+        grid-column-start: 2;
+        grid-column-end: 9;
+    }
+
+
+    .banner__text{
+        grid-row-start: 7;
+        grid-row-end: 8;
+        grid-column-start: 2;
+        grid-column-end: 9;
+        /*margin-bottom: 2rem;*/
+    }
+
+    .banner__button {
+        grid-row-start: 8;
+        grid-row-end: 9;
+        grid-column-start: 3;
+        grid-column-end: 8;
+        margin: auto;
+        padding: 0.5rem   1.1rem;
+        /*border-radius: 2rem;*/
+    }
 }

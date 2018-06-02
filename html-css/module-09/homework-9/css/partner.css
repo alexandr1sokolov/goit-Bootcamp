@@ -1,0 +1,141 @@
+.partner-wrapper {
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+    background-color: #ffffff;
+    padding-top: 4.375rem;
+}
+
+.partner__header {
+    font-size: 1.375rem;
+    text-align: center;
+    color: #333333;
+    /*margin-bottom: 1.25rem;*/
+
+}
+
+.partner {
+    /*display: grid;*/
+    /*grid-template-rows: repeat(9, auto);*/
+    /*grid-template-columns: 1fr;*/
+    /*justify-content: center;*/
+}
+
+.partner__box{
+    display: grid;
+    grid-template-rows: repeat(10, auto);
+    grid-template-columns: 1fr;
+    justify-content: center;
+    /*display: flex;*/
+    /*flex-flow: column;*/
+    flex-basis: 100%;
+
+}
+
+.card {
+    margin: auto;
+    margin-bottom: 1.5625rem;
+
+}
+
+
+.card--first{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column: 1;
+}
+
+.card--second{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column: 1;
+}
+
+.card--third {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column: 1;
+}
+
+.card--fourth {
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column: 1;
+    margin-bottom: 1.5625rem;
+}
+
+.card__photo {
+    display: block;
+    margin: auto;
+    margin-bottom: 0.875rem;
+}
+
+.card__name {
+    font-size: 0.875rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 0.875rem;
+}
+
+.card__description{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #8f8f8f;
+    text-align: center;
+}
+
+.banner__button--partner {
+    grid-row-start: 8;
+    grid-row-end: 9;
+    grid-column: 1;
+    color:#ff4e50;
+    background-color: transparent;
+    border: 0.125rem solid #ff4e50;
+    align-self: auto;
+}
+
+@media (min-width: 768px) {
+    .partner__box {
+        /*display: flex;*/
+        /*flex-flow: row wrap;*/
+        /*justify-content:space-around;*/
+        /*align-content: flex-start;*/
+
+    }
+
+    .card {
+        display: flex;
+        flex-basis: 43%;
+        align-items: flex-start;
+
+    }
+
+    .card--first{
+        order: 1;
+    }
+
+    .card--second{
+        order:3;
+    }
+
+    .card--third {
+        order:2;
+    }
+
+    .card--fourth {
+        order:4;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card{
+        flex-basis: 24%;
+    }
+
+    .card--second{
+        order:2;
+    }
+
+    .card--third {
+        order:3;
+    }
+}

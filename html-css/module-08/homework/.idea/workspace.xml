@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3441dd59-ec34-4f15-a92a-dc160afd733c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/partner.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/partner.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module-09/homework-9/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../module-09/homework-9/css/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module-09/homework-9/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../module-09/homework-9/css/reset.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module-09/homework-9/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../module-09/homework-9/css/style.css" afterDir="false" />
@@ -52,8 +50,8 @@
           <file leaf-file-name="partner.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/partner.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="34" />
+                <state relative-caret-position="578">
+                  <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -124,7 +122,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../module-09/homework-9" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
@@ -160,12 +158,12 @@
       <workItem from="1527879921671" duration="5087000" />
       <workItem from="1527922819212" duration="10941000" />
       <workItem from="1527944662801" duration="52000" />
-      <workItem from="1527954224441" duration="1190000" />
+      <workItem from="1527954224441" duration="1630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27034000" />
+    <option name="totallyTimeSpent" value="27474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -454,8 +452,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/partner.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="34" />
+        <state relative-caret-position="578">
+          <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
         </state>
       </provider>
     </entry>
