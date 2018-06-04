@@ -13,12 +13,13 @@
 .header {
     display:flex;
     align-items: center;
-    height: 100px;
     justify-content: space-between;
+    padding-top: 50px;
 }
 
 .menu-wrapper {
     background-color: #fff;
+    margin-bottom: 178px;
 }
 
 .menu {

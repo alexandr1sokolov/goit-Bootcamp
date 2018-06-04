@@ -3,6 +3,8 @@
     justify-content: space-between;
     font-size: 0;
     border-top: 1px solid#e5e5e5;
+    padding-top:25px;
+    padding-bottom: 25px;
 }
 
 .copiright{
@@ -12,8 +14,8 @@
 
 .copiright-box{
     font-size: 0px;
-    padding-top:25px;
-    padding-bottom: 25px;
+    padding-top: 30px;
+    
 }
 
 .author-text-color {
