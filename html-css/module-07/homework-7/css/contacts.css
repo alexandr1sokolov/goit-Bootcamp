@@ -35,6 +35,14 @@
     width: 48.9%;
 } */
 
+input:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
 #name-input {
     display: block;
     font-family: 'Montserrat', sans-serif;
@@ -78,7 +86,7 @@
     text-transform: uppercase;
     font-weight: 700;
     color: #bbbbbb;
-    padding: 1.1875rem 15rem 1.3125rem 1.25rem;
+    padding-left: 0.5rem;
     border-radius: 0.25rem;
 }
 
