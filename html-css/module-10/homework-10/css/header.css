@@ -6,8 +6,11 @@
 }
 
 .header-wrapper {
-    background-color: #fff;
-    margin-bottom: 11.125rem;
+    background-image: linear-gradient(rgba(239, 139, 138, 0.9), rgba(237, 213, 135, 0.9)), url(../img/banner.png) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 11.125rem;
 }
 
 .container {
@@ -20,6 +23,7 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 3.125rem;
+    margin-bottom:  5.625rem;
 }
 
 .header-wrapper__menu {
@@ -30,7 +34,7 @@
 
 .header-wrapper__logo {
     font-family: 'Lato', sans-serif;
-    color: #95e1d3;
+    color: #fff;
     font-size: 1.875rem;
     text-decoration: none;
     
@@ -45,8 +49,8 @@
 
 .header-wrapper__menu-button {
     font-family: 'Lato', sans-serif;
-    color: #95e1d3;
-    font-size: 16px;
+    color: #fff;
+    /*font-size: 0.625rem;*/
     font-weight: 700;
     text-transform: uppercase;
     transition: 1s;
@@ -56,11 +60,11 @@
     display: block;
     content: '';
     opacity: 0;
-    height: 3px;
-    width: 50px;
+    height: 0.1875rem;
+    width: 3.125rem;
     margin: auto;
-    background-color: #f38181;
-    margin-top: 12px;
+    background-color: #fce38a;
+    margin-top: 0.75rem;
 }
 
 .header-wrapper__menu-button:hover:after{
@@ -70,7 +74,45 @@
 }
 
 .header-wrapper__menu-button:hover {
-    color: #f38181;
+    color: #fce38a;
     cursor: pointer;
     display: block;
+}
+
+.header-wrapper__welcome-title {
+    font-family: 'Kaushan Script',cursive;
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 3.75rem;
+}
+
+.header-wrapper__welcome-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.875rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 7.8125rem;
+}
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    width: 10rem;
+    height: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.button--welcome {
+    display: block;
+    border: 0.25rem solid #fff;
+    margin: auto;
+    background-color: transparent;
 }

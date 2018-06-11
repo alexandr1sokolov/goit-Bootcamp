@@ -2,51 +2,51 @@
     display: flex;
     justify-content: space-between;
     font-size: 0;
-    border-top: 1px solid#e5e5e5;
-    padding-top:25px;
-    padding-bottom: 25px;
+    border-top: 0,0625rem solid#e5e5e5;
+    padding-top: 1,5625rem;
+    padding-bottom: 1,5625rem;
 }
 
 .footer-wrapper__copiright{
-    font-size: 10pt;
+    font-size: 0.625rem;
 
 }
 
 .footer-wrapper__copiright-box{
-    font-size: 0px;
-    padding-top: 30px;
+    font-size: 0;
+    padding-top: 1.875rem;
     
 }
 
 .author-text-color {
     font-family: 'Lato', sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #f6a1a1;
 }
 
 form {
     font-family: 'Lato', sans-serif;
-    font-size: 0px;
+    font-size: 0;
     color: #e5e5e5; 
     outline: none;
     border: none;
-    padding-top: 15px;
+    padding-top: 0.9375rem;
   }
   
   input {
-    border: 1px solid #e5e5e5;
+    border: 0,0625rem solid #e5e5e5;
     color:#e5e5e5;
-    padding: 10px;
-    width: 230px;
+    padding: 0.625rem;
+    width: 14.375rem;
     font-family: 'Lato', sans-serif;
   }
 
   input[type="submit"] {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 0,875rem;
     text-transform: uppercase;
     text-align: center;
-    padding: 10px 0px;
-    width: 150px;
+    padding: 0,0875rem 0;
+    width: 9.375rem;
     background-color: #95e1d3;
   }

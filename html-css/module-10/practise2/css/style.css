@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding:2rem;
+}
+
+/* .center {
+    padding-top: 200px;
+    margin: auto;
+    width: 148px;
+}
+
+.box {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+    transition: 1s;
+}
+
+.box1{
+    background: url('../img/css_sprites.png') -94px -10px;
+}
+
+.box2{
+    background: url('../img/css_sprites.png') -94px -94px;
+}
+
+.box1:hover{
+    background: url('../img/css_sprites.png') -10px -10px;
+}
+
+.box2:hover{
+    background: url('../img/css_sprites.png') -10px -94px;
+} */
+
+/* .icon {
+    width: 5rem;
+    height: 8rem;
+    cursor: pointer;
+    fill: #1EA896;
+}
+
+.icon:hover {
+    fill: #FF715B;
+} */
+
+.box {
+    width: 480px;
+    height: 320px;
+    background: url(http://placeimg.com/480/320/animals?t=1528115681138); 
+}
+
+@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
+    .box{
+        background: url(http://placeimg.com/960/640/animals?t=1528116082979);
+    }
+    
+}
