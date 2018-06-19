@@ -58,8 +58,8 @@ console.log( b[5], a[2], b[8], b[8], a[8]);*/
   - после того как было введено имя показывает alert с тем что ввели в prompt
 */
 
-// let name = prompt('Имя?');
-// alert(name);
+/*let name = prompt('Имя?');
+alert(name);*/
 
 /*
   Есть две переменные name и date, roomType, содержащие
@@ -103,6 +103,118 @@ let totalWidth = parseInt(padding) + parseInt(border) + parseInt(contentWidth) +
 console.log(totalWidth); // '125px'*/
 
 
+/*let time= prompt('What time is it now?');
+if (time >= 14 && time <= 15) {
+    alert('Jrachka time!!!');
+} else {
+    alert('Rabotat Negri!!!');
+}*/
 
+/*
+let money = prompt('Укажите бюджет');
+if (money >= 500){
+    alert('Едем в Египет!!!');
+} else {
+    alert('Нищеброды сидят дома!');
+}
+*/
 
+/*let money = prompt('Укажите бюджет');
+
+if (money >= 500){
+    alert('Едем в Египет!!!');
+}
+
+else if (money > 1000){
+    alert('Едем в Таиланд!!!');
+}
+
+else if (money > 500 && money <= 1000){
+    alert('Едем в Турцию!!!');
+}
+
+else {
+    alert('Нищеброды сидят дома!');
+}*/
+/*
+
+let month = prompt('Введите месяц словами').toLowerCase();
+
+if (month === 'январь' || month === 'февраль' || month === 'декабрь') {
+    alert ('Зима');
+} else if (month === 'март' || month === 'апрель' || month === 'май') {
+    alert ('Весна');
+} else if (month === 'июнь' || month === 'июль' || month === 'август') {
+    alert('Лето');
+} else if (month === 'сентябрь' || month === 'октябрь' || month === 'ноябрь') {
+    alert('осень');
+}
+else {
+    alert('Ты дурак!')
+}
+*/
+
+/*let luckyNumber = 1;
+if (luckyNumber === 1) {
+    console.log('more');
+} else if (luckyNumber === 3) {
+    console.log('little more');
+} else if (luckyNumber === 7) {
+    console.log('You win');
+} else {
+    console.log('try again');
+}*/
+
+/*
+let luckyNumber = 1;
+switch (luckyNumber) {
+    case 1:
+    case 2: // если надо вбить несколько условий
+        console.log('more');
+        break;
+    case 3:
+        console.log('little more');
+        break;
+    case 7:
+        console.log('You win');
+        break;
+    default:
+        console.log('try again');
+        break;
+}
+*/
+
+/*let month = prompt('Введите месяц словами').toLowerCase();
+
+switch (month) {
+    case 'январь':
+    case 'февраль':
+    case 'декабрь':
+        alert('Зима');
+        break;
+
+    case 'март':
+    case 'апрель':
+    case 'май':
+        alert('Весна');
+        break;
+
+    case 'июнь':
+    case 'июль':
+    case 'август':
+        alert('Лето');
+        break;
+
+    case 'сентябрь':
+    case 'октябрь':
+    case 'ноябрь':
+        alert('Осень');
+        break;
+
+    default:
+        alert('Неверный ввод');
+}*/
+
+let num = 5;
+let result = num === '5' ? 'Evrika' : num == 5 ? 'Loser' : 'Fail';
 
