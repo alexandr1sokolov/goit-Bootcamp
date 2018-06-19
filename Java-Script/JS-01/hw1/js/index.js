@@ -24,7 +24,7 @@
 
 
 
-const ADMIN_LOGIN = 'admin';
+/*const ADMIN_LOGIN = 'admin';
 const ADMIN_PASSWORD = 'm4ngo1zh4ackz0r';
 
 let login = prompt('Enter login');
@@ -45,7 +45,7 @@ if (login === null){
         } else if (ADMIN_PASSWORD === passwordPrompt) {
             alert(successAlert);
         }
-}
+}*/
 
 /*
   ⚠️ ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ - ВЫПОЛНЯТЬ ПО ЖЕЛАНИЮ
@@ -72,16 +72,30 @@ if (login === null){
   Если мест нигде нет, показать alert с сообщением 'Извините, столько мест нет ни в одной группе!'
 */
 
-/*
 let sharm = 15;
 let hurgada = 25;
 let taba = 6;
 
 let clientReservation = prompt ('Введите желаемое количество мест для бронирования');
-if (clientReservation ===  Number.isNaN(clientReservation);)
-
 Number.isNaN(clientReservation);
 Number.parseInt(clientReservation);
-*/
+
+if (clientReservation > 25){
+    alert('Извините, столько мест нет ни в одной группе!');
+}
+
+if (Number.parseInt(clientReservation) === true) {
+    alert('Ошибка ввода')
+} else if (Number.parseInt(clientReservation) !== true) {
+    if (clientReservation <= sharm || clientReservation <= hurgada || clientReservation <= taba) {
+        confirm(`есть место в ${clientReservation} желаете быть включенным в группу`);
+        if (confirm === null) {
+            alert('Нам очень жаль, приходите еще!');
+        } else if (confirm === true) {
+            alert(`Приятного путешествия в группе ${}`);
+        } 
+
+    }
+}
 
 
