@@ -24,7 +24,7 @@
 
 
 
-/*const ADMIN_LOGIN = 'admin';
+const ADMIN_LOGIN = 'admin';
 const ADMIN_PASSWORD = 'm4ngo1zh4ackz0r';
 
 let login = prompt('Enter login');
@@ -34,7 +34,7 @@ let accessDenied = 'Доступ запрещен!';
 
 if (login === null){
     alert(cancelAlert);
-} else if (ADMIN_LOGIN !== 'admin') {
+} else if (ADMIN_LOGIN !== login) {
     alert(accessDenied);
 } else if (ADMIN_LOGIN === 'admin'){
     let passwordPrompt = prompt('Введите пароль');
@@ -45,7 +45,7 @@ if (login === null){
         } else if (ADMIN_PASSWORD === passwordPrompt) {
             alert(successAlert);
         }
-}*/
+}
 
 /*
   ⚠️ ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ - ВЫПОЛНЯТЬ ПО ЖЕЛАНИЮ
@@ -72,13 +72,26 @@ if (login === null){
   Если мест нигде нет, показать alert с сообщением 'Извините, столько мест нет ни в одной группе!'
 */
 
+/*
 let sharm = 15;
 let hurgada = 25;
 let taba = 6;
 
 let clientReservation = prompt ('Введите желаемое количество мест для бронирования');
 Number.isNaN(clientReservation);
-Number.parseInt(clientReservation);
+
+if (Number.parseInt(clientReservation) === true) {
+    alert('Ошибка ввода');
+
+    else if (clientReservation <= sharm ) {
+    let offerTaba= 'taba'
+        let acceptOfferTaba =confirm(`есть место в ${offerTaba} желаете быть включенным в группу?`);
+        if (acceptOfferTaba === null) {
+
+        }
+    }
+}
+
 
 if (clientReservation > 25){
     alert('Извините, столько мест нет ни в одной группе!');
@@ -98,4 +111,5 @@ if (Number.parseInt(clientReservation) === true) {
     }
 }
 
+*/
 
