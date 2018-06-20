@@ -76,12 +76,11 @@ let sharm = 15;
 let hurgada = 25;
 let taba = 6;
 
-let clientReservation = prompt ('Введите желаемое количество мест для бронирования');
-Number.isNaN(clientReservation);
-
-if (Number.parseInt(clientReservation) === true) {
+let clientReservation = +prompt ('Введите желаемое количество мест для бронирования');
+if (Number.isNaN(clientReservation) || !Number.isInteger(clientReservation) || clientReservation <=0){
     alert('Ошибка ввода');
 }
+
 else if (clientReservation <= taba ) {
     let offerTaba = 'taba';
     let acceptOfferTaba = confirm(`есть место в ${offerTaba} желаете быть включенным в группу?`);
