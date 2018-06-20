@@ -24,7 +24,7 @@
 
 
 
-const ADMIN_LOGIN = 'admin';
+/*const ADMIN_LOGIN = 'admin';
 const ADMIN_PASSWORD = 'm4ngo1zh4ackz0r';
 
 let login = prompt('Enter login');
@@ -45,7 +45,7 @@ if (login === null){
         } else if (ADMIN_PASSWORD === passwordPrompt) {
             alert(successAlert);
         }
-}
+}*/
 
 /*
   ⚠️ ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ - ВЫПОЛНЯТЬ ПО ЖЕЛАНИЮ
@@ -72,7 +72,6 @@ if (login === null){
   Если мест нигде нет, показать alert с сообщением 'Извините, столько мест нет ни в одной группе!'
 */
 
-/*
 let sharm = 15;
 let hurgada = 25;
 let taba = 6;
@@ -82,34 +81,42 @@ Number.isNaN(clientReservation);
 
 if (Number.parseInt(clientReservation) === true) {
     alert('Ошибка ввода');
+}
+else if (clientReservation <= taba ) {
+    let offerTaba = 'taba';
+    let acceptOfferTaba = confirm(`есть место в ${offerTaba} желаете быть включенным в группу?`);
+    console.log(acceptOfferTaba);
+    if (acceptOfferTaba === false) {
+        alert('Нам очень жаль, приходите еще!');
 
-    else if (clientReservation <= sharm ) {
-    let offerTaba= 'taba'
-        let acceptOfferTaba =confirm(`есть место в ${offerTaba} желаете быть включенным в группу?`);
-        if (acceptOfferTaba === null) {
-
-        }
+    } else if (acceptOfferTaba === true) {
+        alert(`Приятного путешествия в группе ${offerTaba}`);
     }
 }
+else if (clientReservation <= sharm ) {
+    let offerSharm= 'sharm';
+    let acceptOfferSharm =confirm(`есть место в ${offerSharm} желаете быть включенным в группу?`);
+    if (acceptOfferSharm === false) {
+        alert('Нам очень жаль, приходите еще!');
 
+    } else if (acceptOfferSharm === true) {
+        alert(`Приятного путешествия в группе ${offerSharm}`);
+    }
+}
+else if (clientReservation <= hurgada ) {
+    let offerHurgada= 'hurgada';
+    let acceptOfferHurgada =confirm(`есть место в ${offerHurgada} желаете быть включенным в группу?`);
+    if (acceptOfferHurgada === false) {
+        alert('Нам очень жаль, приходите еще!');
 
-if (clientReservation > 25){
+    } else if (acceptOfferHurgada === true) {
+        alert(`Приятного путешествия в группе ${offerHurgada}`);
+    }
+}
+else if (clientReservation > 25) {
     alert('Извините, столько мест нет ни в одной группе!');
 }
 
-if (Number.parseInt(clientReservation) === true) {
-    alert('Ошибка ввода')
-} else if (Number.parseInt(clientReservation) !== true) {
-    if (clientReservation <= sharm || clientReservation <= hurgada || clientReservation <= taba) {
-        confirm(`есть место в ${clientReservation} желаете быть включенным в группу`);
-        if (confirm === null) {
-            alert('Нам очень жаль, приходите еще!');
-        } else if (confirm === true) {
-            alert(`Приятного путешествия в группе ${}`);
-        } 
 
-    }
-}
 
-*/
 
