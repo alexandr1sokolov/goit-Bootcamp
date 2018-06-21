@@ -68,34 +68,27 @@
   Если пользователь нажмет Cancel, прекратить выполнение цикла.
 */
 
+/*
 const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
 let attempts = 3;
-let passwordsElem;
-let  userPassword = prompt('enter password');
-// do {
-//     for (passwordsElem of passwords) {
-//         if (passwordsElem !== userPassword) {
-//             alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
-//             attempts--;
-//             if (attempts < 1) {
-//                 alert("У вас закончились попытки, аккаунт заблокирован!");
-//             }
-//         } else if (passwordsElem === userPassword) {
-//             alert('Добро пожаловать!');
-//         }
-//     }
-// } while (passwordsElem === userPassword || attempts > 0);
-
-for(let i of passwords) {
-    console.log(i);
-    if (i === userPassword) {
+let userPassword;
+do {
+    userPassword = prompt('enter password');
+    if (userPassword === null) {
+        break
+    } else if (passwords.includes(userPassword) === true) {
         alert('Добро пожаловать!');
-    } else if (i !== userPassword) {
-        alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
+        break;
+    } else if (passwords.includes(userPassword) === false) {
         attempts--;
-
+        alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
+        if (attempts === 0) {
+            alert("У вас закончились попытки, аккаунт заблокирован!");
+        }
     }
-}
+} while (attempts > 0 && userPassword !== null);
+*/
+
 
 
 
