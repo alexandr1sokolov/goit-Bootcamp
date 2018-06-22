@@ -293,6 +293,7 @@ console.log(longestWord);*/ // 'force'
     Используйте цикл for...of
 */
 
+/*
 let arrNum = [];
 let num = 0;
 let sum=0;
@@ -311,3 +312,4 @@ for (let elm of arrNum) {
 console.log(sum);
 console.log(arrNum);
 
+*/
