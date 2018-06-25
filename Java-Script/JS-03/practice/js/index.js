@@ -302,4 +302,217 @@ console.log(dataBase);*/
 console.log(workArr);*/
 
 
+//======================
+/*
+function sumArg() {
+    console.log(arguments);
+    // arguments = 1, 5, 9, 12, 1, 100;
+    // return arguments;
+    // console.log(arguments[1]);
+    // let arr = Array.from(arguments);
+    // console.log('Array arguments', arr);
+    // let sum = '';
+    // for (let item of arr) {
+    //     sum += item + ' ';
+    // }
+    // return sum;
+}
+
+//
+console.log(sumArg(1, 5, 9, 12, 1, 100.56));
+console.log(sumArg(5, 9));
+*/
+
+//============================ замыкание . первый пример прятать пароль, второй пример индивидуальынй счетчик
+
+/*function secretPassword() {
+    let password = 'xh38sk';
+
+    function guessPassword(guess) {
+        if (guess === password) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    return guessPassword;
+}
+
+let passwordGame = secretPassword();
+// console.log(passwordGame);
+let tryOne = passwordGame('heyisthisit?');
+let tryTwo = passwordGame('xh38sk');
+// console.log(tryOne);
+// console.log(tryTwo);*/
+
+
+
+/*
+function counter() {
+    let count = 0;
+    function increment() {
+        count +=1;
+        return count;
+    }
+    return increment;
+}
+let user1 = counter();
+console.log(user1);
+let first = user1();
+let user2 = counter();
+let user2First = user2();
+let user2Second = user2();
+let user2Third = user2();
+let user2Fourth = user2();
+console.log('first user counter',first);
+console.log('second user counter',user2Fourth);*/
+
+
+//================ callback function
+
+
+// const printString = function (cb) {
+//     let str = cb();
+//     let sum = 5 + 6;
+//     return str + sum;
+// };
+//
+// function hello() {
+//     return 'Hello World';
+// }
+//
+// console.log(printString(hello));
+
+//=================================  recursion
+
+// const pow = (base, exponent) => {
+//     if (exponent === 0) return 1;
+//
+//     return base * pow(base, exponent - 1);
+// };
+//
+// const pow = (2,3) =>{
+//     if (3 === 0 ) return 1;
+//     return 2 * pow(2,2) => {
+//         if (2 === 0 ) return 1;
+//         return 2 * pow(2,1) => {
+//             if (1 === 0 ) return 1;
+//             return 2 * pow(2,0) => {
+//                 if (0 === 0 ) return 1;
+//             }
+//         }
+//     }
+// }
+
+
+// 0! = 1
+// 1! = 1
+// 2! = 1·2 = 2
+// 3! = 1·2·3 = 6
+// 4! = 1·2·3·4 = 24
+// 5! = 1·2·3·4·5 = 120
+// 6! = 1·2·3·4·5·6 = 720
+// 7! = 1·2·3·4·5·6·7 = 5040
+// 8! = 1·2·3·4·5·6·7·8 = 40320
+// 9! = 1·2·3·4·5·6·7·8·9 = 362880
+// 10! =1·2·3·4·5·6·7·8·9·10 = 3628800
+
+// ============================поиск факториала
+/*
+function factorial(num) {
+    if (num === 0) {
+        return 1;
+    }
+    return (num * factorial(num - 1));
+}
+console.log(factorial(3));
+*/
+
+// Написати ф-ю що приймає аргументом строку формата '160px' і вертає строку формата '10rem'
+
+// let pixels = prompt ('Введите пиксели для преобразования');
+
+/*function rem(pixel) {
+    resultNum = parseInt(pixel);
+    let result = resultNum / 16;
+    return `${result}rem`;
+}
+console.log(rem(pixels));
+console.log(rem('160px')); // 10rem
+console.log(rem('16px')); // 1rem
+console.log(rem('80px')); // 5rem
+console.log(rem('8px')); // 0.5rem*/
+
+
+// написати ф-ї що приймає 2 параметра (розмір елемента і розмір контейнера) і повертає розмір елемента в %
+
+/*
+function prc(block, container) {
+    resultBlock = parseFloat(block);
+    resultContainer = parseFloat(container);
+    let result = resultBlock / resultContainer *100;
+    return `${result}%`;
+}
+console.log(prc('160px','1600px')); // 10%
+console.log(prc('16px','1600px')); // 1%
+console.log(prc('80px','1600px')); // 5%
+console.log(prc('8px','1600px')); // 0.5%
+*/
+
+// Написаьи ф-ю що приймає 3 параметра:
+// 1) Розмір елемента - string
+// 2) Розмір контейнера - string
+// 3 ) одиниці виміру в які треба конвертувати - 'rem' or 'prc'
+
+// function rem(pixel) {
+//     resultNum = parseInt(pixel);
+//     let result = resultNum / 16;
+//     return `${result}rem`;
+// }
+//
+// function prc(block, container) {
+//     resultBlock = parseFloat(block);
+//     resultContainer = parseFloat(container);
+//     let result = resultBlock / resultContainer *100;
+//     return `${result}%`;
+// }
+
+/*function pixelConvert(el,cont, unit) {
+
+    if (unit === 'rem') {
+        resultNum = parseInt(el);
+        let result = resultNum / 16;
+        return `${result}rem`;
+    } else {
+        resultBlock = parseFloat(el);
+        resultContainer = parseFloat(cont);
+        let result = resultBlock / resultContainer *100;
+        return `${result}%`;
+    }
+}*/
+
+// function pixelConvert(el, cont, unit) {
+//     switch (unit) {
+//         case 'rem': {
+//             resultNum = parseFloat(el);
+//             let result = resultNum / 16;
+//             return `${result}rem`;
+//         }
+//         case 'prc': {
+//             resultBlock = parseFloat(el);
+//             resultContainer = parseFloat(cont);
+//             let result = resultBlock / resultContainer * 100;
+//             return `${result}%`;
+//         }
+//         default:
+//             return 'Error';
+//     }
+// }
+//
+// console.log(pixelConvert('160px', null, 'rem')); // 10rem
+// console.log(pixelConvert('160px', '1600px', 'prc')); // 10%
+
+
+
 
