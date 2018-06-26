@@ -121,3 +121,241 @@ console.log(hasPool); // false
 // const c = { ...a, ...b };
 //
 // console.log(c); // {x: 0, y: 2, z: 3}
+
+// const hotel = {
+//     name : "Resort Hotel",
+//     stars: 5,
+//     capacity: 100,
+// };
+
+//   // Перебор ключей key объекта hotel
+//   for (let key in hotel) {
+//     // console.log('Key: ', key);
+//     //   console.log(hotel[key])
+//       console.log(`Key = ${key}, value = ${hotel[key]}`)
+//   }
+
+//================= правильный способ перебора ключей объекта
+// const hotel = {
+//     name : "Resort Hotel",
+//     stars: 5,
+//     capacity: 100,
+// };
+// // console.log(hotel);
+// for (const key in hotel) {
+//     let hasKey = hotel.hasOwnProperty(key); // для того чтобы переберались ключи объетка, а не прототипа
+//     if (hasKey) {
+//         console.log('Value: ', hotel[key]);
+//     }
+// }
+// // console.log(hotel);
+
+
+// const hotel = {
+//     name : "Resort Hotel",
+//     stars: 5,
+//     capacity: 100,
+// };
+//
+//   const keys = Object.keys(hotel); //выдает все ключи объекта
+//   const values = Object.values(hotel); //выдает значения ключей объекта
+//   const entries = Object.entries(hotel); // выдает ключи и значения объекта
+//   console.log(keys);
+//   console.log(values);
+//   console.log(entries);
+
+
+// const hotel = {
+//     name : "Resort Hotel",
+//     stars: 5,
+//     capacity: 100,
+//   };
+// let name = hotel.name;
+// let stars = hotel.stars;
+// let capacity = hotel.capacity;
+
+// const { name, stars, status ,capacity } = hotel;
+// console.log(name);
+//   // Объявим переменные и присвоим им значения из объекта
+
+
+
+
+//=========================== деструктуризация объекта
+// const hotel = {
+//     name: "Resort Hotel",
+//     stars: 5,
+//     capacity: 100,
+// };
+// //
+// const {name = "hotel", stars = 3, status = "empty"} = hotel; // значнеия по умолчанию, еслм такого значния нет, то записывается указанное
+//
+// console.log(name);
+// console.log(stars);
+// console.log(status);
+
+// let dog = {
+//     name: 'Mango',
+//     age: 5,
+//     isHappy: true,
+// };
+
+
+// деструктуризации деструктуризация объекта
+
+// function showObjVal(obj) {
+//     console.log(obj.name);
+//     console.log(obj.age);
+//     console.log(obj.isHappy);
+// }
+
+// function showObjVal({name, age, isHappy}) {
+//     // console.log(name);
+//     // console.log(age);
+//     // console.log(isHappy);
+//     return `dog name is ${name} age is ${age} happy ${isHappy}`;
+// }
+//
+// console.log(showObjVal(dog));
+
+
+// let {name, stars, status} = hotel;
+
+// =====================  dest arr
+// let strNum = ['one', 'two', 'three'];
+// let [a, b, c, d] = strNum;
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+
+
+// let numb = [5, 10, 20];
+
+// function showArrVal(arr) {
+//     console.log(arr[0]);
+//     console.log(arr[1]);
+//     console.log(arr[2]);
+// }
+
+// function showArrVal([a, b, c]) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+// //
+// //
+// showArrVal(numb);
+
+/*
+  Напишите скрипт, который, для объекта user, последовательно:
+
+    - добавляет поле mood со значением 'happy'
+
+    - заменяет значение hobby на 'javascript'
+
+    - удаляет свойство premium
+
+    - выводит содержимое объекта user в формате ключ:значение
+      используя цикл for...in
+
+    - выводит содержимое объекта user в формате ключ:значение
+      используя Object.keys и for...of
+
+    - выводит содержимое объекта user в формате ключ:значение
+      используя Object.entries и for...of
+*/
+
+// const user = {
+//     name: "Mango",
+//     age: 20,
+//     hobby: "html",
+//     premium: true
+// };
+
+// user.mood = 'happy';
+// console.log(user);
+//
+// user.hobby = 'javascript';
+// console.log(user);
+//
+// delete user.premium;
+//
+// for (let key in user) {
+//     console.log(`${key}:${user[key]}`)
+// }
+// let keysArr = Object.keys(user);
+// console.log(keysArr);
+//
+// for (let elem of keysArr){
+//     console.log(`${elem}:${user[elem]}`);
+// }
+
+// let entriesArr = Object.entries(user);
+// console.log(entriesArr);
+//
+// for (let arrElem of entriesArr){
+//     console.log(`${arrElem[0]}:${arrElem[1]}`);
+// }
+
+/*
+  Напиште скрипт который определит и выведет в консоль
+  имя сотрудника который выполнил больше всех задач.
+
+  Сотрудники и кол-во выполненых задач содержатся
+  как свойства объекта в формате "имя":"кол-во задач"
+*/
+
+// const tasksCompleted = {
+//     ann: 29,
+//     david: 35,
+//     helen: 1,
+//     lorence: 99
+// };
+
+// let max = 0;
+// let name = '';
+// for (let key in tasksCompleted) {
+//     if (tasksCompleted[key] > max) {
+//         name = key;
+//         max = tasksCompleted[key];
+//     }
+// }
+// console.log(name);
+
+// let values = Object.values(tasksCompleted);
+// let users = Object.keys(tasksCompleted);
+// // console.log(values);
+// console.log(users);
+// // console.log(Math.max(...values));
+// // Math.max([29, 35, 1, 99]) // Math.max(values)
+// // let maxTask = Math.max(29, 35, 1, 99); // Math.max(...values)
+// let maxTask = Math.max(...values);
+// let winnerIndex = values.indexOf(maxTask);
+// let winner = users[winnerIndex];
+// console.log(winner);
+
+
+/*
+  Напишите функцию countProps(obj),
+  считающую кол-во свойств в объекте.
+  Функция возвращает количество свойств.
+*/
+
+// Вызовы функции для проверки
+console.log(
+    countProps({})
+); // 0
+
+console.log(
+    countProps({a: 1, b: 3, c: 'hello'})
+); // 3
+
+
+
+
+
+
+
+
+
