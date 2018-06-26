@@ -342,6 +342,13 @@ console.log(hasPool); // false
   Функция возвращает количество свойств.
 */
 
+/*
+function countProps(obj) {
+    let objArr = Object.values(obj);
+    return objArr.length;
+}
+
+
 // Вызовы функции для проверки
 console.log(
     countProps({})
@@ -350,6 +357,100 @@ console.log(
 console.log(
     countProps({a: 1, b: 3, c: 'hello'})
 ); // 3
+*/
+
+  // Создайте функцию isObjectEmpty(obj), которая получает
+  // один аргумент obj - объект, и проверяет пуст ли он (есть ли в нем свойства).
+  //
+  // Возвращает true если объект пустой, false если не пустой.
+
+// function isObjectEmpty(obj) {
+//     let objArr = Object.values(obj);
+//     return objArr.length === 0;
+// }
+
+// function isObjectEmpty(obj) {
+//     return obj.hasOwnProperty(''); // не пашет
+// }
+
+// // Вызовы функции для проверки
+// console.log(
+//     isObjectEmpty({})
+// ); // true
+//
+// console.log(
+//     isObjectEmpty({a: 1})
+// ); // false
+//
+// console.log(
+//     isObjectEmpty({a: 1, b: 2}));
+// // ); // false
+
+/*
+  Напишите функцию countTotalSalary(salaries),
+  получающую объект и считающую общую сумму запрплаты работников.
+
+  Каждое поле объекта передаваемого в функцию, имеет вид "имя":"зарплата"
+
+  Функция возвращает общую сумму зарплаты.
+*/
+
+// function countTotalSalary(salaries) {
+//     let sum = 0;
+//     for (let elem in salaries) {
+//         sum += salaries[elem];
+//     }
+//     return sum;
+// }
+//
+// // Вызовы функции для проверки
+// console.log(
+//     countTotalSalary({})
+// ); // 0
+//
+// console.log(
+//     countTotalSalary({
+//         mango: 100,
+//         poly: 150,
+//         alfred: 80
+//     })
+// ); // 330
+
+
+/*
+  Напишите функцию getAllPropValues(arr, prop),
+  которая получает массив объектов и имя ключа,
+  возвращает массив значений определенного поля prop
+  из каждого объекта в массиве
+*/
+
+const users = [
+    { name: 'Poly', age: 7, mood: 'happy' },
+    { name: 'Mango', age: 4, mood: 'blissful'},
+    { name: 'Ajax', age: 3, mood: 'tired' }
+];
+
+console.log(users[0]);
+
+function getAllPropValues(arr, prop){
+    let objArr =[];
+    for (obj of arr){
+
+    }
+}
+
+// // Вызовы функции для проверки
+// console.log(
+//     getAllPropValues(users, 'name')
+// ); // ['Poly', 'Mango', 'Ajax']
+//
+// console.log(
+//     getAllPropValues(users, 'mood')
+// ); // ['happy', 'blissful', 'tired']
+//
+// console.log(
+//     getAllPropValues(users, 'active')
+// ); // []
 
 
 
