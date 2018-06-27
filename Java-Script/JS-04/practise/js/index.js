@@ -70,13 +70,13 @@ console.log(hasPool); // false
 //         return hotel.name; // современный метод записи
 //     },
 //     getStars: () => hotel.stars, //стрелочный метод записи, пока не пользоваться
-    //
-    // changeCapacity(value) {
-    //   hotel.capacity += value;
-    // },
-    // createKey(value) {
-    //     hotel.address = value
-    // }
+//
+// changeCapacity(value) {
+//   hotel.capacity += value;
+// },
+// createKey(value) {
+//     hotel.address = value
+// }
 // };
 
 
@@ -177,8 +177,6 @@ console.log(hasPool); // false
 // const { name, stars, status ,capacity } = hotel;
 // console.log(name);
 //   // Объявим переменные и присвоим им значения из объекта
-
-
 
 
 //=========================== деструктуризация объекта
@@ -335,39 +333,41 @@ console.log(hasPool); // false
 // let winner = users[winnerIndex];
 // console.log(winner);
 
-
 /*
   Напишите функцию countProps(obj),
   считающую кол-во свойств в объекте.
   Функция возвращает количество свойств.
 */
 
-/*
-function countProps(obj) {
-    let objArr = Object.values(obj);
-    return objArr.length;
-}
+// function countProps(obj) {
+//     let objArr = Object.values(obj);
+//     return objArr.length;
+// }
+//
+// // let countProps = obj => Object.values(obj).length;
+//
+// // Вызовы функции для проверки
+// console.log(
+//     countProps({})
+// ); // 0
+//
+// console.log(
+//     countProps({a: 1, b: 3, c: 'hello'})
+// ); // 3
 
-
-// Вызовы функции для проверки
-console.log(
-    countProps({})
-); // 0
-
-console.log(
-    countProps({a: 1, b: 3, c: 'hello'})
-); // 3
-*/
-
-  // Создайте функцию isObjectEmpty(obj), которая получает
-  // один аргумент obj - объект, и проверяет пуст ли он (есть ли в нем свойства).
-  //
-  // Возвращает true если объект пустой, false если не пустой.
+// Создайте функцию isObjectEmpty(obj), которая получает
+// один аргумент obj - объект, и проверяет пуст ли он (есть ли в нем свойства).
+//
+// Возвращает true если объект пустой, false если не пустой.
 
 // function isObjectEmpty(obj) {
 //     let objArr = Object.values(obj);
 //     return objArr.length === 0;
 // }
+
+// let isObjectEmpty =obj => Object.values(obj).length === 0;
+
+
 
 // function isObjectEmpty(obj) {
 //     return obj.hasOwnProperty(''); // не пашет
@@ -394,7 +394,7 @@ console.log(
 
   Функция возвращает общую сумму зарплаты.
 */
-
+//
 // function countTotalSalary(salaries) {
 //     let sum = 0;
 //     for (let elem in salaries) {
@@ -424,20 +424,20 @@ console.log(
   из каждого объекта в массиве
 */
 
-const users = [
-    { name: 'Poly', age: 7, mood: 'happy' },
-    { name: 'Mango', age: 4, mood: 'blissful'},
-    { name: 'Ajax', age: 3, mood: 'tired' }
-];
-
-console.log(users[0]);
-
-function getAllPropValues(arr, prop){
-    let objArr =[];
-    for (obj of arr){
-
-    }
-}
+// const users = [
+//     { name: 'Poly', age: 7, mood: 'happy' },
+//     { name: 'Mango', age: 4, mood: 'blissful'},
+//     { name: 'Ajax', age: 3, mood: 'tired' }
+// ];
+//
+// console.log(users[0]);
+//
+// function getAllPropValues(arr, prop){
+//     let objArr =[];
+//     for (obj of arr){
+//
+//     }
+// }
 
 // // Вызовы функции для проверки
 // console.log(
@@ -452,6 +452,54 @@ function getAllPropValues(arr, prop){
 //     getAllPropValues(users, 'active')
 // ); // []
 
+
+//====================== SPREAD & REST =================================
+// =====================// add the elements of an existing array into a new array
+// let certsToAdd = ['Algorithms', 'Front End'];
+// let certifications = ['Web Design', ...certsToAdd,'Data Visualization', 'APIs', 'Information Security'];
+// console.log(certifications);
+
+//==================== // pass elements of an array as arguments to a function
+// function addThreeNumbers(x, y, z) {
+//     console.log(x + y + z)
+// }
+//
+//=================== // variant #1
+// let salary = [100, 200, 500, 800];
+// addThreeNumbers(salary[0],salary[1],salary[2]);
+// ==================// variant #2
+// let salary = [100, 200, 500, 800];
+// let [a, b, c] = salary;
+// addThreeNumbers(a, b, c)
+// ==================variant #3
+// let salary = [100, 200, 500, 800];
+// console.log(addThreeNumbers(...salary));
+// console.log(addThreeNumbers(100, 200, 500, 800));
+
+//=================== // copy arrays
+
+// let arr = [1, 2, 3];
+// let arr2 = [...arr]; // like arr.slice()
+// arr2.push(4);
+// console.log(arr);
+// console.log(arr2);
+//
+//
+//=================== // concatenate arrays
+// let arr1 = [0, 1, 2];
+// let arr2 = [3, 4, 5];
+// // let arr3 = arr1.concat(arr2);
+// arr1 = ["BootCamp",...arr2,...arr1];
+// // console.log(arr3);
+// console.log(arr1);
+//
+//
+// REST: condense multiple elements into an array
+// function multiply(multiplier,...theArgs) {
+//     console.log('multiplier', multiplier);
+//     console.log('theArgs', theArgs);
+// }
+//  multiply(2, 1, 2, 3, 8, 9);
 
 
 

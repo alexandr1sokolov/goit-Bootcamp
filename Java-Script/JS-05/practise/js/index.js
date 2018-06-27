@@ -1,0 +1,460 @@
+// ================ Функциональные методы массивов //functional methods of arrays
+
+
+// ========= Метод MAP - cоздает новый массив в который попадет результат работы функции ==============================
+
+
+
+// let numbers = [0,2,4];
+// let newNumbersArr = numbers.map(function (item,index,arr) {
+//     return item * 2;
+// });
+//
+// let arrowNumbers = numbers.map(item => item*2); //стрелочный вариант
+//
+// console.log(numbers);
+// // console.log(newNumbersArr);
+// console.log(arrowNumbers);
+
+// к значению массива добавим значение позиции этого числа
+
+// const numbers = [0, 2, 4, 6, 8, 10];
+//
+// let addArr = number.map((item,index)=> item+index);
+
+// const addOne = arr.map(n => n + 1);
+// console.log(addOne); // [1, 3, 5]
+// к значению массива добавим значение позиции этого числа
+// const numbers = [0, 2, 4, 6, 8, 10];
+// const flipFlop = numbers.map(function (element, index) {
+//     return element + index
+// });
+// console.log(flipFlop);
+// const flipFlop = numbers.map((element, index) => element + index);
+// console.log(flipFlop);
+//
+// const addPosition = odd.map((n, i) => n + i);
+// console.log(addPosition); // [0, 3, 6, 9, 12, 15]
+
+
+// ======================== Метод FILTER - создает новый массив в который помещает элементы прошедшие проверку ===============
+
+
+
+// const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let filteredArr = numbers.filter(function (item) {
+//     if (item > 5) {
+//         return item
+//     }
+// });
+//
+// let updateFilter = numbers.filter(item => item > 5 ? item : null);
+//
+// console.log(filteredArr);
+// console.log(numbers);
+
+// ======================== Метод FIND - перебирает массив и возвращает первый совпавший элемент
+//======= если не находит возвращает undefiend ==================================================================
+
+
+
+// const logins = ['Einstein', 'Newton', 'Galilei', 'Copernicus'];
+// let findLogin = logins.find(function (el) {
+//     return el === 'Newton';
+// });
+//
+// let arrowFind = logins.find(el => el === 'Newton');
+//
+// console.log(findLogin);
+
+
+
+// ======================== Метод EVERY - проверяет все ли элементы массива соответствуют условию,
+// результат работы true или false ===============================================================================
+
+
+// const money = [100, 500, 150, 250, 5]; //[true, true, false, true]
+// const go1 = money.every(function (element) {
+//     return element > 0;
+// });
+// console.log(go1);
+
+
+
+
+// ======================== Метод SOME - проверяет есть ли хоть один элемент соответствующий условиям
+// результат работы true или  ===================================================================================
+
+// const money2 = [100, 500, 300, 250];
+// const go = money2.some(function (element) {
+//     return element >= 1000
+// });
+// console.log(go);
+
+// ======================== Метод SORT мутирует существующий массив, меняя порядок раположения элемнтов в массиве
+// если проверка возвращает отрицательное значение идет сортировка в возрастающем пордке
+// если проверка возвращает положительное значение идет сортировка в убывающем пордке==============================
+
+
+// let numbers2 = [4, 2, 5, 1, 3, 11];
+//
+// numbers2.sort(function (a, b) {
+//     return a - b;    // сортировка по возрастающей =>
+//     return b - a;      // сортировка по убывающей <=
+// });
+//
+// console.log(numbers2);
+
+//=========================== соритровка строк =============================================================
+// const logins = ['Einstein', 'Newton', 'Galilei', 'Copernicus'];
+// logins.sort();           // пустые скобки по возрастающей
+// logins.sort().reverse(); // в обратном поряке
+// console.log(logins);
+
+
+// ================дурацкая двойная сортировка ==================================================================
+// let arr = [
+//     {name: 'A', price: 500},
+//     {name: 'C', price: 700},
+//     {name: 'B', price: 800},
+//     {name: 'B', price: 50}
+// ];
+//
+// arr.sort(function (el1, el2) {
+//     return el1.name > el2.name;
+// }).sort(function (el1, el2) {
+//     if (el1.name === el2.name) {
+//         return el1.price > el2.price;
+//     }
+//
+// });
+// console.log(arr);
+
+
+// ======================== Метод REDUCE ========================================================================
+// Аккумулирующая функция, используется для последовательной обработки каждого элемента массива с сохранением промежуточного результата.
+// перебирает, не мутирует исходные данные
+// const hoursWorkedPerWeek = [
+//     {day: 'M',number: 9},
+//     {day: 'T',number: 10},
+//     {day: 'W',number: 11},
+//     {day: 'T',number: 5},
+//     {day: 'F',number: 12}
+// ];
+// let sum = 0;
+// for (let el of hoursWorkedPerWeek) {
+//     sum +=el
+// }
+// console.log(sum);
+
+// let result = hoursWorkedPerWeek.reduce(function (acc, el) {
+//     return acc + el.number;
+// },0);
+// let arrResult = hoursWorkedPerWeek.reduce((acc, el) => acc + el.number, 0);
+// console.log(result);
+
+// ==================== использование нескольких методов сразу =====================================================
+// let superArr = [[1, 5, 10, 11], [12, 15, 16, 17], [25, 65, 47, 89]];
+// let flatArr = superArr
+//     .reduce((acc, arr) => acc.concat(arr),[])
+//     .sort((a, b) => a - b)
+//     .filter(el => el > 16);
+
+
+
+/*  Перепишите все циклы for используя методы map, filter, find, reduce и т. д. */
+
+/*
+  Функция findGreaterThan получает два аргумента - число и массив.
+  Возвращает новый массив, содержащий элементы которые больше числа.
+*/
+// const findGreaterThan = (num, arr) => {
+//     const result = [];
+//
+//     for (let i = 0, max = arr.length; i < max; i += 1) {
+//         if (arr[i] > num) {
+//             result.push(arr[i]);
+//         }
+//     }
+//
+//     return result;
+// };
+
+// function findGreaterThen(num, arr) {
+//     return arr.filter(item=> item>num);
+// }
+//
+// findGreaterThen =(num, arr) => arr.filter(item=> item>num); // в одну строчку
+//
+// console.log( findGreaterThen(2, [1, 2, 3, 4, 5]) ); // [3, 4, 5,]
+// console.log( findGreaterThen(3, [1, 2, 3, 4, 5]) ); // [4, 5,]
+// console.log( findGreaterThen(1, [1, 2, 3, 4, 5]) ); // [2, 3, 4, 5,]
+
+/*
+  Функция multiplyBy принимает два аргумента - число и массив.
+  Возвращает массив все значения которого умножены на число.
+*/
+// const multiplyBy = (num, arr) => {
+//     let result = [];
+//
+//     for (let i = 0, max = arr.length; i < max; i += 1) {
+//         result.push(arr[i] * num);
+//     }
+//
+//     return result;
+// };
+
+
+// function multiplyBy(num, arr) {
+//     return arr.map(function (item) {
+//         return item * num;
+//     });
+// }
+
+// const multiplyBy = (num, arr) => arr.map(item =>item * num);
+
+
+//
+// console.log( multiplyBy(2, [1, 2, 3, 4, 5]) ); // [2, 4, 6, 8, 10]
+// console.log( multiplyBy(3, [1, 2, 3, 4, 5]) ); // [3, 6, 9, 12, 15]
+// console.log( multiplyBy(4, [1, 2, 3, 4, 5]) ); // [4, 8, 12, 16, 20]
+
+/*
+  Функция summAllNumbers принимает любое число аргументов.
+  Возвращает число - сумму всех аргументов.
+*/
+// function summAllNumbers(...args) {
+//     let accumulator = 0;
+//
+//     for (let i = 0, max = args.length; i < max; i += 1) {
+//         accumulator += args[i];
+//     }
+//
+//     return accumulator;
+// }
+
+// function summAllNumbers(...args){
+//    return args.reduce(function(accum, item){
+//         return accum+item;
+//     })
+// }
+//
+//
+// const summAllNumbers = (...args) => args.reduce((accum, item) => accum+item,0);
+//
+// console.log( summAllNumbers(1, 2, 3) ); // 6
+// console.log( summAllNumbers(1, 2, 3, 4) ); // 10
+// console.log( summAllNumbers(1, 2, 3, 4, 5) ); // 15
+
+/*
+  Функция findEvery получает два аргумента - число и массив.
+  Возвращает true если все элементы массива больше или равны числу.
+  Иначе если есть хоть один элемент меньше числа, то возвращается false.
+*/
+// const findEvery = (num, arr) => {
+//     for (let i = 0, max = arr.length; i < max; i += 1) {
+//         if (arr[i] < num) {
+//             return false;
+//         }
+//     }
+//
+//     return true;
+// };
+//
+// function findEvery(num,arr){
+//    return arr.every(function(item){
+//        return item>=num;
+//    })
+// }
+
+// const findEvery = (num,arr) => arr.every((item) => item>=num);
+//
+// //
+// console.log( findEvery(5, [5, 6, 7, 8, 9]) ); // true
+// console.log( findEvery(6, [5, 6, 7, 8, 9]) ); // false
+// console.log( findEvery(4, [5, 6, 7, 8, 9]) ); // true
+
+
+
+
+/*
+  Напишите функию getPropValues(arr, prop), принимающую
+  параметры arr - массив, и prop - имя ключа в объекте.
+
+  Функция должна возвращать массив всех значений этого ключа из arr.
+
+  PS: обязательно используйте функциональные методы массивов, никаких for!
+*/
+
+// const guests = [
+//     { name: "Mango", age: 20, isActive: true },
+//     { name: "Poly", age: 18, isActive: false },
+//     { name: "Ajax", age: 30, isActive: true },
+//     { name: "Chelsey", age: 45, isActive: false }
+// ];
+//
+//
+// // function getPropValues(arr, prop) {
+// //     return arr.map(elem => elem[prop]);
+// // }
+//
+// const getPropValues = (arr, prop) => arr.map(elem => elem[prop]);
+//
+//
+// // Вызовы функции для проверки
+// console.log( getPropValues(guests, "name") ); // ['Mango', 'Poly', 'Ajax', 'Chelsey']
+//
+// console.log( getPropValues(guests, "age") ); // [20, 18, 30, 45]
+//
+// console.log( getPropValues(guests, "isActive") ); // [true, false, true, false]
+
+
+/*
+  Напишите функцию setGuestState(guests, period), где
+  guests - массив гостей, period - кол-во дней после
+  которого считается что гость не активен.
+
+  Если значение поля inactiveDays болше чем period,
+  поставить для isActive значение false.
+
+  Если же значение inactiveDays меньше чем period,
+  поставить для isActive значение true
+
+  PS: обязательно используйте функциональные методы массивов, никаких for!
+*/
+
+// const users = [
+//     { name: 'Mango', inactiveDays: 15, isActive: true },
+//     { name: 'Poly', inactiveDays: 8, isActive: false },
+//     { name: 'Ajax', inactiveDays: 32, isActive: false },
+//     { name: 'Chelsey', inactiveDays: 85, isActive: true }
+// ];
+//
+// function setGuestState(guests, period){
+//     return users.map(elem => period <elem.inactiveDays ? {...elem, isActive: false} : {...elem, isActive: true});
+// }
+//
+//
+//
+//
+// // Вызовы функции для проверки
+// console.log(
+//     setGuestState(users, 10)
+// ); // Объекты Mango, Ajax, Chelsey получат isActive false, а Poly наоборот true
+//
+// console.log(
+//     setGuestState(users, 20)
+// ); // Объекты Ajax, Chelsey получат isActive false, а Mango и Poly наоборот true
+//
+// console.log(
+//     setGuestState(users, 50)
+// ); // Объект Chelsey получит isActive false, а Mango, Poly и Ajax наоборот true
+
+/*
+  Напишите функию getActiveGuests(guests), принимающую
+  один параметр guests - массив объектов гостей.
+
+  Функция должна возвращать массив объектов гостей,
+  значение поля isActive которых true.
+
+  PS: обязательно используйте функциональные методы массивов, никаких for!
+*/
+
+// const guests = [
+//     { name: "Mango", age: 20, isActive: true },
+//     { name: "Poly", age: 18, isActive: false },
+//     { name: "Ajax", age: 30, isActive: true },
+//     { name: "Chelsey", age: 45, isActive: false }
+// ];
+//
+// const getActiveGuests = (guests) => {
+//     return guests.filter(function(el) {
+//     if (el.isActive === true){
+//         return el;
+//     }
+//     })
+// };
+//
+// // Вызовы функции для проверки
+// console.log(getActiveGuests(guests)); // массив из 2-х объектов Mango и Ajax
+
+/*
+  Напишите функцию getGuestsOlderThan(guests, age), где
+  guests - массив объектов гостей, age - предел возраста
+  для сортировки.
+
+  Функция возвращает массив объектов значение свойства
+  age которых больше чем параметр age.
+
+  PS: обязательно используйте функциональные методы массивов, никаких for!
+*/
+
+// const guests = [
+//     { name: "Mango", age: 20, isActive: true },
+//     { name: "Poly", age: 18, isActive: false },
+//     { name: "Ajax", age: 30, isActive: true },
+//     { name: "Chelsey", age: 45, isActive: false }
+// ];
+//
+//
+// const getGuestsOlderThan = (guests, age) => {
+//     return guests.filter(function(el){
+//         if (el.age > age){
+//             return el;
+//         }
+//     })
+// };
+//
+//
+//
+//
+// // Вызовы функции для проверки
+// console.log(getGuestsOlderThan(guests, 25)); // массив из 2-х объектов Ajax и Chelsey
+//
+// console.log(getGuestsOlderThan(guests, 35)); // [{name: 'Chelsey', age: 45, isActive: false}]
+//
+// console.log(getGuestsOlderThan(guests, 55)); // []
+
+
+/*
+  Напишите функию getGuestById(guests, id), принимающую
+  guests - массив объектов гостей, id - идентификатор (число).
+
+  Функция должна возвращать объект гостя с совпадающим id.
+
+  PS: обязательно используйте функциональные методы массивов, никаких for!
+*/
+
+// const guests = [
+//     { id: 1, name: 'Mango', age: 20 },
+//     { id: 2, name: 'Poly', age: 18 },
+//     { id: 3, name: 'Ajax', age: 30 },
+//     { id: 4, name: 'Chelsey', age: 45 }
+// ];
+//
+// function getGuestById(guests, id){
+//
+// }
+//
+// // Вызовы функции для проверки
+// console.log(
+//     getGuestById(guests, 3)
+// ); // {id: 3, name: 'Ajax', age: 30}
+//
+// console.log(
+//     getGuestById(guests, 1)
+// ); // {id: 1, name: 'Mango', age: 20}
+//
+// console.log(
+//     getGuestById(guests, 5)
+// ); // undefined
+
+
+
+
+
+
+
+
+
+
