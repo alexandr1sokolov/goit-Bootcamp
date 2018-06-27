@@ -431,11 +431,16 @@
 //     { id: 3, name: 'Ajax', age: 30 },
 //     { id: 4, name: 'Chelsey', age: 45 }
 // ];
-//
+
+
 // function getGuestById(guests, id){
-//
+//     return guests.find(function (obj){
+//     return obj.id === id;
+//     })
 // }
-//
+
+// let getGuestById =(guests, id) => guests.find((obj)=>obj.id === id);
+
 // // Вызовы функции для проверки
 // console.log(
 //     getGuestById(guests, 3)
@@ -448,6 +453,63 @@
 // console.log(
 //     getGuestById(guests, 5)
 // ); // undefined
+
+/*
+  Используя метод reduce, посчитайте сумму
+  всех значений свойств объекта order.
+*/
+// const order = {
+//     bread: 10,
+//     apples: 25,
+//     chicken: 60,
+//     milk: 15,
+//     cheese: 40
+// };
+//
+// const arr = Object.values(order);
+// // console.log(arr);
+// const total = arr.reduce((acc, value) => acc + value, 0);
+//
+//
+// console.log(total);
+// // console.log(...); // 150
+
+/*
+  Напишите функцию getTotalPrice(products, order), где
+  products - объект со свойствами "имя продукта":"цена за единицу"
+  order - объект со свойствами "имя продукта":"количество единиц".
+
+  Функция возвращает общую сумму стоимости всех продуктов заказа.
+
+  PS: используйте метод reduce
+*/
+
+// const products = {
+//     bread: 10,
+//     milk: 15,
+//     apples: 20,
+//     cheese: 30,
+//     chicken: 40
+// };
+//
+// const orderA = {
+//     bread: 2,
+//     apples: 4,
+//     chicken: 1
+// };
+//
+// const orderB = {
+//     bread: 1,
+//     milk: 2,
+//     cheese: 3
+// };
+//
+// // Вызовы функции для проверки
+// console.log(getTotalPrice(products, orderA)); // 140
+//
+// console.log(getTotalPrice(products, orderB)); // 130
+
+
 
 
 
