@@ -38,6 +38,7 @@
 
 
 // ======================== Метод FILTER - создает новый массив в который помещает элементы прошедшие проверку ===============
+// ============elem/filter/arr
 
 
 
@@ -510,7 +511,166 @@
 // console.log(getTotalPrice(products, orderB)); // 130
 
 
+/*
+  Напишите функию getGuestById(guests, id), принимающую
+  guests - массив объектов гостей, id - идентификатор (число).
 
+  Функция должна возвращать объект гостя с совпадающим id.
+
+  PS: обязательно используйте функциональные методы массивов, никаких for!
+*/
+
+// const guests = [
+//     { id: 1, name: 'Mango', age: 20 },
+//     { id: 2, name: 'Poly', age: 18 },
+//     { id: 3, name: 'Ajax', age: 30 },
+//     { id: 4, name: 'Chelsey', age: 45 }
+// ];
+//
+// function getGuestById(guests, id){
+//     return guests.find(function (obj){
+//         return obj.id === id;
+//     })
+// }
+//
+// // Вызовы функции для проверки
+// console.log(
+//     getGuestById(guests, 3)
+// ); // {id: 3, name: 'Ajax', age: 30}
+//
+// console.log(
+//     getGuestById(guests, 1)
+// ); // {id: 1, name: 'Mango', age: 20}
+//
+// console.log(
+//     getGuestById(guests, 5)
+// ); // undefined
+
+
+/*
+  Используя метод reduce, посчитайте сумму
+  всех значений свойств объекта order.
+*/
+// const order = {
+//     bread: 10,
+//     apples: 25,
+//     chicken: 60,
+//     milk: 15,
+//     cheese: 40
+// };
+//
+// let orderItemArr = Object.values(order);
+// console.log(orderItemArr);
+// let result = orderItemArr.reduce(function (acc,item,){
+//     return acc+item;
+// });
+//
+// console.log(result); // 150
+
+/*
+  Напишите функцию getTotalPrice(products, order), где
+  products - объект со свойствами "имя продукта":"цена за единицу"
+  order - объект со свойствами "имя продукта":"количество единиц".
+
+  Функция возвращает общую сумму стоимости всех продуктов заказа.
+
+  PS: используйте метод reduce
+*/
+
+// const products = {
+//     bread: 10,
+//     milk: 15,
+//     apples: 20,
+//     cheese: 30,
+//     chicken: 40
+// };
+//
+// const orderA = {
+//     bread: 2,
+//     apples: 4,
+//     chicken: 1
+// };
+//
+// const orderB = {
+//     bread: 1,
+//     milk: 2,
+//     cheese: 3
+// };
+
+// function getTotalPrice (products,order ){
+//     let total=0;
+//     return total = products.filter(function (order){
+//         if (order.element === products.element){
+//            return order.element.value * products.element.value;
+//         }
+//     });
+//     let orderTotal = Object.values(total);
+//     let result = orderItemArr.reduce(function (acc,item){
+//         return acc+item;
+//     });
+//
+// }
+// Вызовы функции для проверки
+// function getTotalPrice (products,order){
+//     const ARR = [];
+//     for (let item in order) {
+//         if (order.hasOwnProperty(item)) {
+//             let sum = order[item] * products[item];
+//             ARR.push(sum);
+//         }
+//     }
+//     return ARR.reduce(function (acc,item){
+//         return acc+item;
+//     });
+// }
+
+
+//=========== в одну строку
+let getTotalPrice = (products, order) =>{
+    return Object.keys(order).map(item => products[item] * order[item]).reduce((acc, item)=> acc +item)};
+
+
+
+// console.log(getTotalPrice(products, orderA)); // 140
+//
+// console.log(getTotalPrice(products, orderB)); // 130
+
+/*
+  Напишите функию allGuestsActive(guests), принимающую
+  один параметр guests - массив объектов гостей.
+
+  Функция должна возвращать true если значение поля isActive
+  всех объектов true, в противном случае false.
+
+  PS: используйте метод every или some, никаких for!
+*/
+
+const guestsA = [
+    { name: "Mango", isActive: true },
+    { name: "Poly", isActive: false },
+    { name: "Ajax", isActive: true }
+];
+
+const guestsB = [
+    { name: "Mango", isActive: true },
+    { name: "Poly", isActive: true },
+    { name: "Ajax", isActive: true }
+];
+
+// function allGuestsActive(guests){
+//     return guests.every(function(object){
+//         if(object.isActive === true){
+//             return true;
+//         }
+//     })
+// }
+
+const allGuestsActive = (guests) => guests.every((object) => object.isActive === true);
+
+// Вызовы функции для проверки
+console.log(allGuestsActive(guestsA)); // false
+
+console.log(allGuestsActive(guestsB)); // true
 
 
 
