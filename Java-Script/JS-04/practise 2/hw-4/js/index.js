@@ -1,3 +1,4 @@
+'use strict';
 /*
   Создайте скрипт кассира, который получает список продуктов и деньги,
   подсчитывает общую стоимость продуктов, и в зависимости от того хватает
@@ -49,8 +50,52 @@ const products = {
 */
 
 function Cashier(name, productsDatabase) {
-    // 🔔 не забывайте о this при обращении к свойствам и методам будущего объекта
+    this.name = name;
+    this.productsDatabase = productsDatabase;
+    this.totalPrice = 0;
+    this.customerMoney = 0;
+    this.changeAmount = 0;
+    this.greet = function () {
+        console.log(`Здравствуйте, вас обслуживает ${this.name}`);
+    };
+    this.onSuccess = function() {
+        return this.changeAmount === 0 ? console.log(`Спасибо за покупку`) : console.log(`Спасибо за покупку, ваша сдача ${this.changeAmount}`)
+    };
+    this.onError = function () {
+        console.log('Очень жаль, вам не хватает денег на покупки');
+    };
+    this.countTotalPrice = function (order) {
+        const arr = [];
+        for (let item in order) {
+            if (order.hasOwnProperty(item)) {
+                let sum = order[item] * this.productsDatabase[item];
+                arr.push(sum);
+            }
+        }
+        let total = arr.reduce(function (acc, item) {
+            return acc + item;
+        });
+        return this.totalPrice = total;
+    };
+    this.getCustomerMoney = function (value) {
+        this.customerMoney = value;
+    };
+    this.countChange = function () {
+        if (this.customerMoney > this.totalPrice) {
+            return this.changeAmount = this.customerMoney - this.totalPrice;
+        } else {
+            return null;
+        }
+    };
+    this.reset = function () {
+        return `${this.totalPrice = 0}, ${this.customerMoney = 0}, ${this.changeAmount = 0}`;
+    };
 }
+
+
+
+    // 🔔 не забывайте о this при обращении к свойствам и методам будущего объекта
+
 
 /* Заказ пользователя хранится в виде объекта следующего формата. "имя-продукта":"количество-единиц" */
 const order = {

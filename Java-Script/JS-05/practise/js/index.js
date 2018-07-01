@@ -577,25 +577,25 @@
   PS: используйте метод reduce
 */
 
-// const products = {
-//     bread: 10,
-//     milk: 15,
-//     apples: 20,
-//     cheese: 30,
-//     chicken: 40
-// };
-//
-// const orderA = {
-//     bread: 2,
-//     apples: 4,
-//     chicken: 1
-// };
-//
-// const orderB = {
-//     bread: 1,
-//     milk: 2,
-//     cheese: 3
-// };
+const products = {
+    bread: 10,
+    milk: 15,
+    apples: 20,
+    cheese: 30,
+    chicken: 40
+};
+
+const orderA = {
+    bread: 2,
+    apples: 4,
+    chicken: 1
+};
+
+const orderB = {
+    bread: 1,
+    milk: 2,
+    cheese: 3
+};
 
 // function getTotalPrice (products,order ){
 //     let total=0;
@@ -611,29 +611,29 @@
 //
 // }
 // Вызовы функции для проверки
-// function getTotalPrice (products,order){
-//     const ARR = [];
-//     for (let item in order) {
-//         if (order.hasOwnProperty(item)) {
-//             let sum = order[item] * products[item];
-//             ARR.push(sum);
-//         }
-//     }
-//     return ARR.reduce(function (acc,item){
-//         return acc+item;
-//     });
-// }
+function getTotalPrice (products,order){
+    const ARR = [];
+    for (let item in order) {
+        if (order.hasOwnProperty(item)) {
+            let sum = order[item] * products[item];
+            ARR.push(sum);
+        }
+    }
+    return ARR.reduce(function (acc,item){
+        return acc+item;
+    });
+}
 
 
 //=========== в одну строку
-let getTotalPrice = (products, order) =>{
-    return Object.keys(order).map(item => products[item] * order[item]).reduce((acc, item)=> acc +item)};
+// let getTotalPrice = (products, order) =>{
+//     return Object.keys(order).map(item => products[item] * order[item]).reduce((acc, item)=> acc +item)};
 
 
 
-// console.log(getTotalPrice(products, orderA)); // 140
-//
-// console.log(getTotalPrice(products, orderB)); // 130
+console.log(getTotalPrice(products, orderA)); // 140
+
+console.log(getTotalPrice(products, orderB)); // 130
 
 /*
   Напишите функию allGuestsActive(guests), принимающую
@@ -645,34 +645,101 @@ let getTotalPrice = (products, order) =>{
   PS: используйте метод every или some, никаких for!
 */
 
-const guestsA = [
-    { name: "Mango", isActive: true },
-    { name: "Poly", isActive: false },
-    { name: "Ajax", isActive: true }
-];
+// const guestsA = [
+//     { name: "Mango", isActive: true },
+//     { name: "Poly", isActive: false },
+//     { name: "Ajax", isActive: true }
+// ];
+//
+// const guestsB = [
+//     { name: "Mango", isActive: true },
+//     { name: "Poly", isActive: true },
+//     { name: "Ajax", isActive: true }
+// ];
+//
+// // function allGuestsActive(guests){
+// //     return guests.every(function(object){
+// //         if(object.isActive === true){
+// //             return true;
+// //         }
+// //     })
+// // }
+//
+// const allGuestsActive = (guests) => guests.every((object) => object.isActive === true);
+//
+// // Вызовы функции для проверки
+// console.log(allGuestsActive(guestsA)); // false
+//
+// console.log(allGuestsActive(guestsB)); // true
 
-const guestsB = [
-    { name: "Mango", isActive: true },
-    { name: "Poly", isActive: true },
-    { name: "Ajax", isActive: true }
-];
-
-// function allGuestsActive(guests){
-//     return guests.every(function(object){
-//         if(object.isActive === true){
-//             return true;
-//         }
-//     })
-// }
-
-const allGuestsActive = (guests) => guests.every((object) => object.isActive === true);
-
-// Вызовы функции для проверки
-console.log(allGuestsActive(guestsA)); // false
-
-console.log(allGuestsActive(guestsB)); // true
+this.countTotalPrice = function(order){
+    const arr = [];
+    for (let item in order) {
+        if (order.hasOwnProperty(item)) {
+            let sum = order[item] * this.productsDatabase[item];
+            arr.push(sum);
+        }
+    }
+    let total = arr.reduce(function (acc,item){
+        return acc+item;
+    });
+    return this.totalPrice = total;
+};
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+function Cashier(name, productsDatabase) {
+    this.name = name;
+    this.productsDatabase = productsDatabase;
+    this.totalPrice = 0;
+    this.customerMoney = 0;
+    this.changeAmount = 0;
+    this.greet = function(){
+        console.log(`Здравствуйте, вас обслуживает ${this.name}`);
+    };
+    this.onSuccess = function(){
+        return this.changeAmount === 0? console.log(`Спасибо за покупку`) : `Спасибо за покупку, ваша сдача ${this.changeAmount}`
+    };
+    this.onError= function(){
+        console.log('Очень жаль, вам не хватает денег на покупки');
+    };
+    this.countTotalPrice = function(order){
+        const arr = [];
+        for (let item in order) {
+            if (order.hasOwnProperty(item)) {
+                let sum = order[item] * this.productsDatabase[item];
+                arr.push(sum);
+            }
+        }
+        let total = arr.reduce(function (acc,item){
+            return acc+item;
+        });
+        return this.totalPrice = total;
+    };
+    this.getCustomerMoney = function(value){
+        this.customerMoney =value;
+    };
+    this.countChange =function (){
+        if ( this.customerMoney>this.totalPrice){
+            return this.changeAmount = this.customerMoney - this.totalPrice;
+        } else {
+            return null;
+        }
+    };
+    this.reset =function(){
+        return `${this.totalPrice=0}, ${this.customerMoney =0}, ${this.changeAmount =0}`;
+    }
 
 
 
