@@ -342,7 +342,7 @@ const scientist = [
 
 // 2) знайти суму років скільки прожили всі вченні
 
-// let result = scientist.map((obj)=> obj.year).reduce((acc, value) => acc + value, 0);
+// let result = scientist.map((obj)=> obj.passed - obj.year).reduce((acc, value) => acc + value, 0);
 // console.log(result);
 
 // 3) Відсортувати вчених по алфавіту
@@ -360,11 +360,14 @@ const scientist = [
 // console.log(result);
 
 // 6) Видалити з масива вчених що родилися в 15 або 16 або 17 столітті
-
-
+// let result = scientist.filter((obj)=>obj.year>1700);
+// console.log(result);
 
 // 7) Знайти вченого який родився саме пізніше.
+// let result = scientist.sort((a,b)=>b.year - a.year).find((element,index)=> index[0]); //ne pashet
+// console.log(result);
 // 8) Знайти рік народження Albert Einstein
+let result = scientist.find((obj))
 // 9) Знайти вчених прізвище яких починається на літеру С
 // 10) Видалити з масива всіх вчених імя яких починається на A
 
