@@ -1,4 +1,4 @@
-const users = [
+/*const users = [
     {
         id: '701b29c3-b35d-4cf1-a5f6-8b12b29a5081',
         name: 'Moore Hensley',
@@ -90,7 +90,7 @@ const users = [
         gender: 'female',
         age: 39,
     },
-];
+];*/
 /*
   Используя массив (users) объектов пользователей, напишите функции которые с помощью
   функциональных методов массивов (никаких for, splice и т.д.) выполняют указанные операции.
@@ -364,10 +364,10 @@ const scientist = [
 // console.log(result);
 
 // 7) Знайти вченого який родився саме пізніше.
-// let result = scientist.sort((a,b)=>b.year - a.year).find((element,index)=> index[0]); //ne pashet
+// let result = scientist.sort((a,b)=>b.year - a.year).find((obj,index,arr)=>arr[0]); //ne pashet
 // console.log(result);
 // 8) Знайти рік народження Albert Einstein
-let result = scientist.find((obj))
+// let result = scientist.find((obj))
 // 9) Знайти вчених прізвище яких починається на літеру С
 // 10) Видалити з масива всіх вчених імя яких починається на A
 
