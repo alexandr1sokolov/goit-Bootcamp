@@ -93,22 +93,22 @@
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Hamburger {
     constructor(size,stuffing){
-        this.size=size;
-        this.stuffing=stuffing;
-        this.topping=[];
+        this._size=size;
+        this._stuffing=stuffing;
+        this._topping=[];
     }
     addTopping(topping){
-        if(!this.topping.includes(topping)){
-            this.topping.push(topping);
+        if(!this._topping.includes(topping)){
+            this._topping.push(topping);
         } else {
             alert(`You can add only one topping of this type`)
         }
     }
     removeTopping(topping){
-        if(this.topping.includes(topping)){
+        if(this._topping.includes(topping)){
             // let toppingIndex = this.topping.indexOf(topping);
             // this.topping.splice(toppingIndex,1);
-            this.topping = this.topping.filter((element)=>{
+            this._topping = this._topping.filter((element)=>{
                 if(element!==topping){
                    return element;
                 }
@@ -117,26 +117,26 @@ class Hamburger {
             alert(`Sorry, this topping cannot be removed because of its absence`);
         }
     }
-    getToppings(){
-        return this.topping;
+    get getToppings(){
+        return this._topping;
     }
-    getSize(){
-        return this.size;
+    get getSize(){
+        return this._size;
     }
-    getStuffing(){
-        return this.stuffing;
+    get getStuffing(){
+        return this._stuffing;
     }
     calculatePrice(){
-        let price1=Hamburger.SIZES[this.size].price;
-        let price2=Hamburger.STUFFINGS[this.stuffing].price;
-        let price3= this.topping.map((strng)=>Hamburger.TOPPINGS[strng].price).reduce((acc,item)=> acc+item,0);
+        let price1=Hamburger.SIZES[this.getSize].price;
+        let price2=Hamburger.STUFFINGS[this.getStuffing].price;
+        let price3= this.getToppings.map((strng)=>Hamburger.TOPPINGS[strng].price).reduce((acc,item)=> acc+item,0);
         return price1+price2+price3;
 
     }
     calculateCalories() {
-        let calories1=Hamburger.SIZES[this.size].calories;
-        let calories2=Hamburger.STUFFINGS[this.stuffing].calories;
-        let calories3= this.topping.map((strng)=>Hamburger.TOPPINGS[strng].price).reduce((acc,item)=> acc+item,0);
+        let calories1=Hamburger.SIZES[this.getSize].calories;
+        let calories2=Hamburger.STUFFINGS[this.getStuffing].calories;
+        let calories3= this.getToppings.map((strng)=>Hamburger.TOPPINGS[strng].price).reduce((acc,item)=> acc+item,0);
         return calories1+calories2+calories3;
     }
 }
@@ -209,10 +209,10 @@ hamburger.addTopping(Hamburger.TOPPING_SAUCE);
 console.log("Price with sauce: ", hamburger.calculatePrice());
 
 // Проверить, большой ли гамбургер?
-console.log("Is hamburger large: ", hamburger.getSize() === Hamburger.SIZE_LARGE); // -> false
+console.log("Is hamburger large: ", hamburger.getSize === Hamburger.SIZE_LARGE); // -> false
 
 // Убрать добавку
 hamburger.removeTopping(Hamburger.TOPPING_SPICE);
 
 // Смотрим сколько добавок
-console.log("Hamburger has %d toppings", hamburger.getToppings().length); // 1
+console.log("Hamburger has %d toppings", hamburger.getToppings.length); // 1
