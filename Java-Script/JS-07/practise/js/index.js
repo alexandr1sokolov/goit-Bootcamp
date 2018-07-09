@@ -216,20 +216,48 @@
 // window.addEventListener('keypress', showEvent);
 
 //======================================================== всплытие (делегирование) bubbling
-function resizeFont(e) {
-    console.log('this',this);
-    console.log('target',e.target);
-    e.target.classList.toggle('bigText');
-}
-// bad practice
-// let listItem = document.querySelectorAll('.item');
-// listItem.forEach(el => el.addEventListener('click', resizeFont));
-// console.log(listItem);
-
-// good
-
-let list = document.querySelector('.list1');
-list.addEventListener('click', resizeFont);
+// function resizeFont(e) {
+//     console.log('this',this);
+//     console.log('target',e.target);
+//     e.target.classList.toggle('bigText');
+// }
+// // bad practice
+// // let listItem = document.querySelectorAll('.item');
+// // listItem.forEach(el => el.addEventListener('click', resizeFont));
+// // console.log(listItem);
+//
+// // good
+//
+// let list = document.querySelector('.list1');
+// list.addEventListener('click', resizeFont);
 
 //================================================== остановка всплытия
 // event.stopPropagation();
+
+//================================================= навигация по DOM
+// const html = document.documentElement;
+// console.log(html);
+// const body = document.body;
+// console.log(body);
+// console.log(body.childNodes);                               // выберает всё наполнение элемента
+// console.log(body.children);                                 // выбирает теги с содержимым
+// console.log(body.firstChild);                                  // первый элемент блока
+// console.log(body.firstElementChild);                        // первый дочерний элемент
+// console.log(body.lastChild);                                // последний элемент
+// console.log(body.lastElementChild);                         // последний дочерний элемент
+// const div = body.children[0];                               // можно выбрать тег по номеру индекса в псевдомассиве
+// console.log(p.previousElementSibling);                      // пердыдущий соседний элемент
+// console.log(p.previousSibling);                             // доступ к переносу строки (текст контент)
+// console.log(p.nextElementSibling);                          // следующий соседнй элемент
+// console.log(p.nextSibling);                                 // доступ к переносу строки (текст контент)
+// console.log(p.parentNode);                                  // доступ к отцовскому контейниру в котором элемент расположен
+// console.log(p.style);                                          // доступ к стилям
+// p.style.fontSize = '50px';
+
+// const userName = document.querySelector('.name');
+// const btn = document.querySelector('#send');
+// btn.addEventListener('click', function (event) {                // функция которая отслеживает события
+//     event.preventDefault();                                     // отменяет стандартное поведение, в данном случае не происходит автоматическая отправка
+//     console.log(userName.value);                                // value туда сохраняется то, что вводится в форму
+//     userName.value = '';                                        // обнуляем строку ввода
+// });
