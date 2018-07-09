@@ -1,3 +1,4 @@
+`use strict`;
 const posts = [
     {
         img: "https://placeimg.com/400/150/arch",
@@ -19,13 +20,31 @@ const posts = [
     }
 ];
 
-let list = document.querySelector('.container');
-let result =  function createPostCard(posts) {
-    list.insertAdjacentHTML('afterbegin', `<div class="post">
-    <img class="post__image" src="http://via.placeholder.com/400x150" alt="post image">
-    <h2 class="post__title">Lorem ipsum dolor</h2>
-    <p class="post__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!</p>
+const container = document.querySelector('.container');
 
-    <a class="button" href="#">Read more</a>
-</div>`);
-};
+const createPostCard = ({img,title,text,link})=>
+    `<div class="post">
+    <img class="post__image" src="${img}" alt="post image">
+    <h2 class="post__title"${title}</h2>
+    <p class="post__text">${text}</p>
+    <a class="button" href="#">${link}</a>
+</div>`;
+
+const createCards = arr => arr.reduce((acc, card) => acc + createPostCard(card),``);
+container.insertAdjacentHTML('afterbegin',createCards(posts));
+
+
+
+//вначале было так
+// const createPostCard = ({img,title,text,link})=>
+//     container.insertAdjacentHTML('afterend', `<div class="post">
+//     <img class="post__image" src="${img}" alt="post image">
+//     <h2 class="post__title"${title}</h2>
+//     <p class="post__text">${text}</p>
+//     <a class="button" href="#">${link}</a>
+// </div>`);
+//
+// function createCards(arr) {
+//     arr.reduce((acc, card) => acc + createPostCard(card),``);
+// }
+// createCards(posts);
