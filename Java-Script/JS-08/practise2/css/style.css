@@ -1,0 +1,32 @@
+.btn {
+    position: absolute;
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: none;
+    top: 30px;
+    left: 50%;
+    color: #fff;
+    background-color: blue;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 30px;
+    transition: 0.3s ease all;
+}
+.win {
+    background-color: green;
+}
+.faill {
+    background-color: red;
+}
+.danger {
+    background-color: brown;
+}
+.atention {
+    background-color: yellowgreen;
+}
+
+.toggle{
+    color:blue;
+    font-weight: bold;
+    font-size: 24px;
+}
