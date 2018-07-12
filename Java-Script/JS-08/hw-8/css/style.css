@@ -31,7 +31,7 @@ ul {
 
 .preview-item {
     display: inline-block;
-    padding: 4px;
+    padding: 6px;
 }
 
 .preview-img {
@@ -39,5 +39,5 @@ ul {
 }
 
 .preview-img-active {
-    border: 8px solid rgba(0, 0, 0, 0.24);
+    border: 6px solid #1E90FF;
 }
