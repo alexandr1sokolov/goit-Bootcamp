@@ -96,7 +96,7 @@ function reset() {
         startBtn.textContent = 'Start';
         lapArr =[];
         timeToDisplay.textContent = `00:00.0`;
-        // laps.childNodes.remove(); не пашет
+        laps.innerHTML ='';
     }
 }
 resetBtn.addEventListener('click',reset);
@@ -108,9 +108,6 @@ function lap() {
 }
 lapBtn.addEventListener('click',lap);
 
-function lapUpdate(lapArr){
-
-}
 
 
 

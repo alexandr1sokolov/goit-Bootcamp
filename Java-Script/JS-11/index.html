@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Title</title>
+</head>
+<body>
+<template id="address-template">
+    <p>You can find me in {{city}}. My address is {{number}} {{street}}.</p>
+</template>
+
+<template id="example-template">
+
+    <!-- people is looked up on the global context, the one we pass to the compiled template -->
+
+    {{#each people}}
+
+    <!-- Here the context is each individual person. So we can access its properties directly: -->
+    <p>{{firstName}} {{lastName}}</p>
+
+    {{/each}}
+
+</template>
+
+<template id="menu">
+    <div class="menu">
+        <h3 class="menu-title">{{title}}</h3>
+        <ul class="menu-list">
+            {{#each items}}
+            <li class="menu-item">{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
+
+<template id="built-in-helpers-template">
+    {{#each animals}}
+    <p>
+        The {{this.name}} says
+        {{#if this.noise}}
+        "{{this.noise}}".
+        {{else}}
+        nothing since its a {{this.name}}.
+        {{/if}}
+    </p>
+    {{/each}}
+</template>
+
+<div class="content-placeholder"></div>
+
+<div id="menu-container"></div>
+
+<template id="gallery">
+    <h2 class="gallery-title">{{title}}</h2>
+    {{#each items}}
+    <div class="gallery-item">
+        <img class="gallery-img" src="{{img}}" alt="">
+        <p class="gallery-text">{{text}}</p>
+    </div>
+    {{/each}}
+</template>
+
+<div class="gallery">
+
+    <div class="gallery-content"></div>
+</div>
+
+<template id="phones">
+    {{#each phones}}
+    <div class="module-card-bottom">
+        <img src="{{image}}"/>
+        <div>
+            <h2>{{name}}</h2>
+            <p>price:{{price}}$</p>
+            <p>{{description}}</p>
+        </div>
+        <ul class="open hide">
+            <li>cpu: {{cpu}}</li>
+            <li>camera: {{camera}}</li>
+            <li>size: {{size}}</li>
+            <li>weight: {{weight}}</li>
+            <li>display :{{display}}</li>
+            <li>battery :{{battery}}</li>
+            <li>memory :{{memory}}</li>
+        </ul>
+        <button class="module-card-button">See More</button>
+    </div>
+    {{/each}}
+</template>
+<div class="phones-container"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
