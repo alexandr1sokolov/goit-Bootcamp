@@ -1,3 +1,5 @@
+//=================================================MODULE 11===============================================
+
 // const source = document.querySelector('#address-template').innerHTML.trim();
 // // console.log(source);
 // const temp = Handlebars.compile(source);
@@ -196,7 +198,6 @@ function buttonHandler({target}){
 
 // btn.forEach((el, index)=>{
 //     if (el === target){
-//         let index = btn.indexOf(target);
 //         open[index].classList.remove('hide');
 //     } else {
 //         // open.forEach((el) => el.classList.add('hide'));
@@ -239,3 +240,120 @@ function buttonHandler({target}){
 //         ) : null;
 //     e.stopPropagation();
 // });
+
+
+
+
+
+
+
+
+
+
+const mail = document.querySelector('#mail');
+// const pass = document.querySelector('#pass');
+// const register = document.querySelector('#register');
+// const page = document.querySelector('.page');
+// const result = document.querySelector('.result');
+// const final = document.querySelector('.final');
+// //
+//
+// register.addEventListener('click',getResult);
+// function getResult (){
+//     let mailResult=false;
+//     let passResult=false;
+//     getMail1 ();
+//     function getMail1 (){
+//         let mailValidity= /(\.com$|\.ua$|\.net$)/;
+//         let mailStatus = mailValidity.test(mail.value);
+//         console.log(mailStatus);
+//         if (mailStatus){
+//             result.append=`<p>"Mail correct"</p>`;
+//             mailResult=true;
+//         }
+//         else {
+//             result.append=`<p>"Mail error"</p>`;
+//         }
+//     }
+//     getPass();
+//     function getPass(){
+//         console.log('yes');
+//         let passValidity1 = /[A-Z]/;
+//         console.log(passValidity1);
+//         let passValidity1Test =passValidity1.test(pass.value);
+//         console.log(passValidity1Test);
+//         let passValidity2 = /\d+/g;
+//         let passValidity2Test =passValidity2.test(pass.value);
+//         let passValidity3Test = pass.value.length<16 && pass.value.length>4;
+//         if (passValidity1Test&&passValidity2Test&&passValidity3Test){
+//             page.classList.add('hidePage');
+//             passResult=true;
+//             result.innerHTML=`<p>"Password correct"</p>`;
+//         }
+//         else {
+//             result.innerHTML=`<p>"Password error"</p>`;
+//         }
+//     }
+//     if (mailResult&&passResult){
+//         final.innerHTML=`<p>"Congratulations, you have been successfully registered"</p>`;
+//     }
+//
+// }
+//
+//
+// //event.preventDefault();
+//
+//
+// // let mailValidity= /(\.com$|\.ua$|\.net$)/;
+// // let mailStatus = mailValidity.test(mail.value);
+// // console.log(mailStatus);
+// // if (mailStatus){
+// //     result.innerHTML=`<p>"Mail correct"</p>`;
+// // }
+// // else if{
+// //     result.innerHTML=`<p>"Mail error"</p>`;
+// // }
+// //
+// //
+// //
+// // if (mailStatus){
+// //     getPass();
+// //     function getPass(){
+// //         console.log('yes');
+// //         let passValidity1 = /([A-Z])(\d+)/g;
+// //         console.log(passValidity1);
+// //         let passValidity1Test =passValidity1.test(pass.value);
+// //         console.log(passValidity1Test);
+// //         let passValidity2Test = pass.value.length<16 && pass.value.length>4;
+// //         if (passValidity1Test&&passValidity2Test){
+// //             page.classList.add('hidePage');
+// //             result.innerHTML=`<p>"Congratulations, you have been successfully registered"</p>`;
+// //         }
+// //         else {
+// //             result.innerHTML=`<p>"Password error"</p>`;
+// //         }
+// //     }
+// // }
+
+
+function getPass(){
+    console.log('yes');
+    let passValidity1 = /[A-Z]/;
+    console.log(passValidity1);
+    let passValidity1Test =passValidity1.test(pass.value);
+    console.log(passValidity1Test);
+    let passValidity2 = /\d+/g;
+    let passValidity2Test =passValidity2.test(pass.value);
+    let passValidity3Test = pass.value.length<16 && pass.value.length>4;
+    if (passValidity1Test&&passValidity2Test&&passValidity3Test){
+        page.classList.add('hidePage');
+        passResult=true;
+        passwordR.innerHTML=`<p>"Password correct"</p>`;
+    }
+    else {
+        passwordR.innerHTML=`<p>"Password error"</p>`;
+    }
+}
+if (mailResult&&passResult){
+    final.innerHTML=`<p>"Congratulations, you have been successfully registered"</p>`;
+}
