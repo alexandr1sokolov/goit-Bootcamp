@@ -179,9 +179,9 @@ const container = document.querySelector('.phones-container');
 container.innerHTML = markup;
 
 const btn = document.querySelectorAll('.module-card-button');
-btnArr =Array.from(btn);
+let btnArr =Array.from(btn);
 const open = document.querySelectorAll('.open');
-openArr = Array.from(open);
+let openArr = Array.from(open);
 container.addEventListener('click',buttonHandler);
 
 function buttonHandler({target}){
