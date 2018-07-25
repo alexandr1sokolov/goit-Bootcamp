@@ -1,7 +1,7 @@
 // import React, {Component} from 'react';
 // import PropTypes from 'prop-types';
-
-
+//
+//
 // class Counter extends React.Component{
 //     // static propTypes ={
 //     //     start: PropTypes.number,
@@ -31,7 +31,7 @@
 //
 //     minus=()=>{
 //         console.log('minus');
-//         this.state.counterStart === 0 ? null : this.setState(prevState =>({counterStart: prevState.counterStart -1}));
+//         return this.state.counterStart === 0 ? null : this.setState(prevState =>({counterStart: prevState.counterStart -1}));
 //     };
 //
 //     render(){
