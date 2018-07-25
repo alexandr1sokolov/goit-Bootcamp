@@ -1,15 +1,29 @@
 import React, {Component} from 'react';
+import './form.css'
+// const input = {
+//   padding: '10px',
+//   border: '2px solid #FFF',
+//   width: '165px',
+// };
+//
+// const buttonStyle ={
+//   padding: '10pcx',
+//   fontSize: '16px',
+//   margin: '10px',
+//   marginRight: '0px',
+//   backgroundColor: '#0066FF',
+//   color: '#FFF',
+//   border: '2px solid #0066FF',
+// };
 
 class NewForm extends Component {
-    send=(e)=>{
-        e.preventDefault();
-        console.log('test');
-    };
-
     state ={
         login:'',
         password:'',
     };
+  send=(e)=>{
+    e.preventDefault();
+  };
 
     // changeLoginInput = (e)=>{
     //     const value = e.target.value;
@@ -35,18 +49,22 @@ class NewForm extends Component {
 
     render(){
         return(
-            <form onSubmit={this.send}>
+            <form onSubmit={this.send} className='input'>
                 <input onChange={this.changeInput}
                        type="text"
                        name="login"
                        placeholder="Your login"
-                       value={this.state.login}/>
+                       value={this.state.login}
+                       className='input'
+                />
                 <input onChange={this.changeInput}
                        type="password"
                        name="password"
                        placeholder="Your password"
-                       value={this.state.password}/>
-                <button type='submit'>Send</button>
+                       value={this.state.password}
+                       className='input'
+                />
+                <button type='submit' className='btn'>Send</button>
             </form>
         )
     }
