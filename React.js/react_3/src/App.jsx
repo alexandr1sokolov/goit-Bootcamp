@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './App.css'
 import ToDoList from './Components/ToDoList/ToDoList'
+import Button from './Components/Button/Button'
 
 class App extends Component {
 
@@ -23,6 +24,14 @@ class App extends Component {
             }))}
     };
 
+    deleteItem =(id)=>{
+      const filter =this.state.items.filter(el=>el.id!==id);
+
+      this.setState({
+          items:filter
+      })
+    };
+
     itemChange =({target})=>{
         const value = target.value;
         const name = target.name;
@@ -31,13 +40,13 @@ class App extends Component {
         })
     };
 
-    deleteItem =(id)=>{
-      const filter =this.state.items.filter(el=>el.id!==id);
-
-      this.setState({
-          items:filter
-      })
-    };
+    updateItem= (id,text)=>{
+        const updateResult = this.state.items.map(el=>(el.id===id? {...el, text:text}:el))
+       
+        this.setState({
+            items:updateResult,
+        })
+           }
 
     render(){
         return(
@@ -52,10 +61,14 @@ class App extends Component {
                             className={styles.input}
                             type="text"
                         />
-                        <button type='submit' className={styles.btn}>Add</button>
+                        <Button text='Add' type='submit'/>  
+                        {/* <button type='submit' className={styles.btn}>Add</button> */}
                     </form>
-                    <ToDoList tasks={this.state.items}
-                    deleteItem={this.deleteItem}/>
+                    <ToDoList 
+                    tasks={this.state.items}
+                    deleteItem={this.deleteItem}
+                    update ={this.updateItem}
+                    />
                 </div>
             </div>
         )
