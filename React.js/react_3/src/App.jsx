@@ -24,6 +24,14 @@ class App extends Component {
             }))}
     };
 
+    itemChange =({target})=>{
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value,
+        })
+    };
+
     deleteItem =(id)=>{
       const filter =this.state.items.filter(el=>el.id!==id);
 
@@ -32,13 +40,7 @@ class App extends Component {
       })
     };
 
-    itemChange =({target})=>{
-        const value = target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value,
-        })
-    };
+    
 
     updateItem= (id,text)=>{
         const updateResult = this.state.items.map(el=>(el.id===id? {...el, text:text}:el))

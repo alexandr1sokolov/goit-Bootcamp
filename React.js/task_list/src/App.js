@@ -1,18 +1,42 @@
+/* eslint-disable */
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.css';
 
 class App extends Component {
-  render() {
+
+    state={
+        input:'',
+        inputsArr:[],
+    };
+
+    addInput =(event)=>{
+       event.preventDefault();
+
+       let newInput ={
+        input: this.state.input,
+        id: Date.now(),
+       };
+
+        this.state.input !=='' ? this.setState(prevState=>({inputsArr:[newInput, ...prevState.inputsArr],input: '',})):null;
+    };
+
+    updateInput =({target})=>{
+        let input= target.name;
+        let value= target.value;
+
+        this.setState({
+            [input]:value,
+        })
+    };
+
+    render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className={styles.container}>
+          <h1 className={styles.header}>ToDo LIST</h1>
+          <form onSubmit={this.addInput}>
+              <input onChange={this.updateInput} type="text" name='input' value={this.state.input} placeholder='New Task'/>
+              <button type='submit'>Create</button>
+          </form>
       </div>
     );
   }
