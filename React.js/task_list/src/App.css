@@ -1,6 +1,38 @@
 .container {
-  width: 500px;
+  margin: auto;
+  width: 580px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50%;
+
 }
+
+.container__btn {
+  width: 25%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+    background-color: #1d6d9a;
+
+}
+
+.input{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 75%;
+}
+
+.container__form{
+  width: 100%;
+  border-radius: 50%;
+ }
+
 .header{
-  font-size: 26px;
+  width: 100%;
+  font-size: 1.5rem;
+  color: #ffffff;
+  background-color: #168bfc;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+    border-radius: 4px;
 }
