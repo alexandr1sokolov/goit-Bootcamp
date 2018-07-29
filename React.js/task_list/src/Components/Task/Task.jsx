@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button'
@@ -15,9 +16,8 @@ class Task extends Component {
     };
 
     updateInput =({target})=>{
-        let input= target.name;
-        console.log(input);
-        let value= target.value;
+        const input= target.name;
+        const value= target.value;
 
         this.setState({
             [input]:value,
@@ -41,7 +41,8 @@ class Task extends Component {
             this.state.isModified?
                 <div>
                     <li className={styles.task}>
-                        <input className={styles.input} onChange={this.updateInput} type="text" value={input} name='input'/>         <div>
+                        <input className={styles.input} onChange={this.updateInput} type="text" value={this.state.input} name='input'/>
+                        <div>
                             <Button onClick={this.handleEdit} text='Save'/>
                             <Button onClick={this.toggle} text='Cancel'/>
                         </div>
@@ -65,6 +66,7 @@ Task.propTypes = {
     input: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     deleteTask: PropTypes.func.isRequired,
+    editTask: PropTypes.func.isRequired,
 };
 
 export default Task;

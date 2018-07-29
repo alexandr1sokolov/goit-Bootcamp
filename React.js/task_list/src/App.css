@@ -1,4 +1,5 @@
 .container {
+  padding-top: 3rem;
   margin: auto;
   width: 580px;
   display: flex;

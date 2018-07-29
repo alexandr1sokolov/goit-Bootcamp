@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import styles from './App.css';
 import TaskList from './Components/TaskList/TaskList'
@@ -7,22 +8,29 @@ class App extends Component {
     state={
         input:'',
         inputsArr:[],
+        placeholder:'New Task',
     };
 
-    addInput =(event)=>{
-       event.preventDefault();
+  warningBlank =()=> {
+    this.setState({
+      placeholder:'You can\'t create blank task'
+    });
+  };
 
-       let newInput ={
-        input: this.state.input,
-        id: Date.now(),
-       };
+  addInput =(event)=>{
+    event.preventDefault();
 
-        this.state.input !=='' ? this.setState(prevState=>({inputsArr:[newInput, ...prevState.inputsArr],input: '',})):alert('Your input is empty!!!');
+    const newInput ={
+      input: this.state.input,
+      id: Date.now(),
     };
+
+    this.state.input !=='' ? this.setState(prevState=>({inputsArr:[newInput, ...prevState.inputsArr],input: '', placeholder:'New Task',})):this.warningBlank();
+  };
 
     updateInput =({target})=>{
-        let input= target.name;
-        let value= target.value;
+        const input= target.name;
+        const value= target.value;
 
         this.setState({
             [input]:value,
@@ -47,7 +55,7 @@ class App extends Component {
           <div className={styles.container__form}>
               <h1 className={styles.header}>ToDo List</h1>
               <form onSubmit={this.addInput}>
-                  <input className={styles.input} onChange={this.updateInput} type="text" name='input' value={this.state.input} placeholder='New Task'/>
+                  <input className={styles.input} onChange={this.updateInput} type="text" name='input' value={this.state.input} placeholder={this.state.placeholder}/>
                   <button className={styles.container__btn} type='submit'>Create</button>
               </form>
           </div>
