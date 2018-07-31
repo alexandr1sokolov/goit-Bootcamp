@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import styles from './App.css'
-import ToDoList from './Components/ToDoList/ToDoList'
-import Button from './Components/Button/Button'
+import axios from 'axios';
+import styles from './App.css';
+import ToDoList from './Components/ToDoList/ToDoList';
+import Button from './Components/Button/Button';
 
 class App extends Component {
 
@@ -10,18 +11,42 @@ class App extends Component {
         item:'',
     };
 
+    componentDidMount(){
+        axios.get('/tasks')
+            // .then(response=> console.log(response))
+            .then(({status, data})=>{
+                if (status === 200){
+                    this.setState({
+                        items: data
+                    })
+                }
+            });
+    }
+
     addItem =(event)=>{
         event.preventDefault();
-        const task = {
-            text: this.state.item,
-            id: Date.now(),
-        };
+        const task = {text: this.state.item};
 
         if (this.state.item !==''){
-            this.setState(prevState=> ({
-                items:[task, ...prevState.items],
-                item: '',
-            }))}
+            axios.post('/tasks',task)
+                .then(({data, status})=>{if(status === 201){
+                    this.setState(prevState =>({
+                        items:[data, ...prevState.items],
+                        item:'',
+                    }))
+                }})
+        }
+        //==============старая версия
+        // const task = {
+        //     text: this.state.item,
+        //     id: Date.now(),
+        // };
+        //
+        // if (this.state.item !==''){
+        //     this.setState(prevState=> ({
+        //         items:[task, ...prevState.items],
+        //         item: '',
+        //     }))}
     };
 
     itemChange =({target})=>{
@@ -33,22 +58,38 @@ class App extends Component {
     };
 
     deleteItem =(id)=>{
-      const filter =this.state.items.filter(el=>el.id!==id);
 
-      this.setState({
-          items:filter
-      })
+        axios.delete(`/tasks/${id}`)
+            .then(({status}) => {
+                if (status === 200) {
+                    this.setState({
+                        items: this.state.items.filter(el => el.id !== id)
+                    })
+                }
+            })
+      // const filter =this.state.items.filter(el=>el.id!==id);
+      //
+      // this.setState({
+      //     items:filter
+      // })
     };
 
-    
-
     updateItem= (id,text)=>{
-        const updateResult = this.state.items.map(el=>(el.id===id? {...el, text:text}:el))
-       
-        this.setState({
-            items:updateResult,
+        const task = this.state.items.find(el => el.id ===id);
+        axios.put(`/tasks/${id}`,{...task, text:text})
+            .then(({status,data}) => {
+            if (status === 200) {
+                this.setState({
+                    items: this.state.items.map(el=>(el.id===id? data:el))
+                })
+            }
         })
-           }
+        // const updateResult = this.state.items.map(el=>(el.id===id? {...el, text:text}:el));
+        //
+        // this.setState({
+        //     items:updateResult,
+        // })
+           };
 
     render(){
         return(

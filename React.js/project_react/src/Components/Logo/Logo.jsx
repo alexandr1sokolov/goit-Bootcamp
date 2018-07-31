@@ -3,7 +3,7 @@ import './Logo.css';
 
 const Logo = () => {
     return (
-        <a href='#' className="logo">
+        <a href='https://www.google.com' className="logo">
             <h1 className="title">Logo</h1>
         </a>
     )

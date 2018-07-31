@@ -16,6 +16,10 @@
     .container {
         display: flex;
     }
+
+    .main {
+        flex-basis: 80%;
+    }
 }
 
 

@@ -1,5 +1,6 @@
-/* eslint-disable */
+
 import React, { Component } from 'react';
+import axios from 'axios';
 import styles from './App.css';
 import TaskList from './Components/TaskList/TaskList'
 
@@ -8,12 +9,16 @@ class App extends Component {
     state={
         input:'',
         inputsArr:[],
-        placeholder:'New Task',
+        placeholder:' New Task',
     };
 
-  warningBlank =()=> {
+    componentDidMount(){
+    axios.get('/tasks').then(({data,status})=>{if(status === 200){this.setState({inputsArr: data})}});
+  }
+
+  warningBlank = () => {
     this.setState({
-      placeholder:'You can\'t create blank task'
+      placeholder: ' You can\'t create blank task'
     });
   };
 
@@ -21,12 +26,33 @@ class App extends Component {
     event.preventDefault();
 
     const newInput ={
-      input: this.state.input,
-      id: Date.now(),
-    };
+        input: this.state.input,
+      };
 
-    this.state.input !=='' ? this.setState(prevState=>({inputsArr:[newInput, ...prevState.inputsArr],input: '', placeholder:'New Task',})):this.warningBlank();
-  };
+    if (this.state.input !=='')
+    {
+      axios.post('/tasks', newInput)
+        .then(({data, status}) => {
+        if (status === 201) {
+          this.setState(prevState => ({
+            inputsArr: [data, ...prevState.inputsArr],
+            input: '',
+            placeholder:' New Task',
+          }))
+        }
+      });
+    } else {
+      this.warningBlank()
+    }};
+
+
+    // const newInput ={
+    //   input: this.state.input,
+    //   id: Date.now(),
+    // };
+    //
+    // return this.state.input !=='' ? this.setState(prevState=>({inputsArr:[newInput, ...prevState.inputsArr],input: '', placeholder:' New Task',})):this.warningBlank();
+  // };
 
     updateInput =({target})=>{
         const input= target.name;
@@ -37,17 +63,34 @@ class App extends Component {
         })
     };
 
-    deleteTask = (id)=>{this.setState({
-        inputsArr: this.state.inputsArr.filter(el=> el.id !== id)
-    })}
-    ;
 
-    editTask = (id,input)=>{
+  deleteTask = (id) => {
+    axios.delete(`/tasks/${id}`).then(({status}) => {
+      if (status === 200) {
         this.setState({
-            inputsArr: this.state.inputsArr.map(el=> el.id === id? {...el,input: input}:el)
+          inputsArr: this.state.inputsArr.filter(el=> el.id !== id)
         })
-    }
-    ;
+      }
+    })
+  };
+    // deleteTask = (id)=>{this.setState({
+    //     inputsArr: this.state.inputsArr.filter(el=> el.id !== id)
+    // })};
+
+  editTask = (id, input) => {
+    axios.put(`/tasks/${id}`, input)
+      .then(({status, data}) => {
+        if (status === 200) {
+          this.setState({inputsArr: this.state.inputsArr.map(el => el.id === id ? {...data, input} : el)})
+        }
+      })
+  };
+
+    // editTask = (id,input)=>{
+    //     this.setState({
+    //         inputsArr: this.state.inputsArr.map(el=> el.id === id? {...el,input}:el)
+    //     })
+    // };
 
     render() {
     return (
@@ -65,7 +108,6 @@ class App extends Component {
                     addInput = {this.addInput}
           />
       </div>
-
     );
   }
 }
