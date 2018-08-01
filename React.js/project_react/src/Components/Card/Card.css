@@ -5,10 +5,6 @@
     font-family: var(--family);
 }
 
-.artist-card__img{
-    width: 19%;
-    height: 160px;
-}
 .artist-card:last-child {
     margin: 0 auto;
 }
@@ -22,12 +18,12 @@
     background-color: var(--serch);
     z-index: -1;
     position: relative;
-    top: -1.05rem;
-    width: 9.56rem;
+    width: 10.86rem;
     margin: auto;
     padding: 1rem 0.5rem;
     border-radius: 0.125rem;
     box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.65),inset 0 0.0625rem 0 0 rgba(255, 255, 255, 0.15);
+    min-height: 90px;
 }
 
 .artist-card__name {
