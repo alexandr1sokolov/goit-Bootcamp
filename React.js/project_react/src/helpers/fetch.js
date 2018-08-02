@@ -1,5 +1,5 @@
 import axios from 'axios';
-export default function  fetchData(url){
+export function  fetchData(url){
     return axios.get(url)
         .then(({data, status})=>{
             if(status===200){
@@ -7,3 +7,4 @@ export default function  fetchData(url){
             }
         })
 }
+

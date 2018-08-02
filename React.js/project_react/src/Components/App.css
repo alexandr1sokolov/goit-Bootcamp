@@ -1,3 +1,10 @@
+::-webkit-scrollbar { width: 3px; height: 3px;}
+::-webkit-scrollbar-track {  background-color: var(--red);}
+::-webkit-scrollbar-track-piece { background-color: rgb(134, 134, 134);}
+::-webkit-scrollbar-thumb { height: 50px; background-color: var(--red); border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #666;}
+::-webkit-resizer { background-color: var(--red);}
+
 .wrapper {
     background-color: #282828;
 }
@@ -11,6 +18,13 @@
     position: relative;
     box-shadow: 0 0 0.625rem 0.5rem rgba(0, 0, 0, 0.15);
 }
+.loader{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 
 @media (min-width: 768px) {
     .container {
@@ -18,8 +32,12 @@
     }
 
     .main {
+        position: relative;
         flex-basis: 80%;
     }
+
+
+
 }
 
 
