@@ -37,6 +37,45 @@
     color: var(--grey);
 }
 
+.img-container {
+    width: 174px;
+    margin: auto;
+    position: relative;
+}
+.card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 174px;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: none;
+}
+
+.artist-card:hover .card__overlay {
+    display: block;
+}
+.svg-container {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+.card__svg {
+    width: 30px;
+    height: 30px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.card__svg:hover {
+    width: 40px;
+    height: 40px;
+}
+
 
 @media (min-width: 480px) {
     .artist-card {
@@ -46,6 +85,7 @@
     .artist-card:nth-last-child(-n+2) {
         margin: 0 auto;
     }
+
 }
 
 @media (min-width: 550px) {

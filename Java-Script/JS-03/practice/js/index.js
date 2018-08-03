@@ -528,44 +528,115 @@ console.log(prc('8px','1600px')); // 0.5%
 // 7) Перевірка на ціле і додатнє число.
 //8 ) alert вивести суму яку він отримає.
 
-let fromCurrency = prompt('Please, choose currency you wish to convert (USD,EUR,UAH):').toUpperCase();
-let toCurrency = prompt('Please, choose currency you wish to obtain(USD,EUR,UAH):').toUpperCase();
-let summToConvert = prompt('Please, indicate summ you wish to convert');
+// let fromCurrency = prompt('Please, choose currency you wish to convert (USD,EUR,UAH):').toUpperCase();
+// let toCurrency = prompt('Please, choose currency you wish to obtain(USD,EUR,UAH):').toUpperCase();
+// let summToConvert = prompt('Please, indicate summ you wish to convert');
+//
+// function currencyCourses() {
+//     let USDUAH = 26.3;
+//     let USDEUR = 0.85;
+//     let EURUAH = 30.7;
+//     let EURUSD = 1.17;
+//     let UAHUSD = 0.038;
+//     let UAHEUR = 0.032;
+//
+//     function currencyExchange(fromCurrency, toCurrency, summToConvert) {
+//         switch (fromCurrency + toCurrency) {
+//             case 'USDUAH':
+//                 return (parseInt(summToConvert) * USDUAH).toFixed(2) + ' UAH';
+//             case 'EURUSD':
+//                 return (parseInt(summToConvert) * EURUSD).toFixed(2) + ' USD';
+//             case 'EURUAH':
+//                 return (parseInt(summToConvert) * EURUAH).toFixed(2) + ' UAH';
+//             case 'USDEUR':
+//                 return (parseInt(summToConvert) * USDEUR).toFixed(2) + ' EUR';
+//             case 'UAHUSD':
+//                 return (parseInt(summToConvert) * UAHUSD).toFixed(2) + ' USD';
+//             case 'UAHEUR':
+//                 return (parseInt(summToConvert) * UAHEUR).toFixed(2) + ' EUR';
+//             default:
+//                 return "Error";
+//         }
+//     }
+//     return currencyExchange;
+// }
+// let result = currencyCourses();
+// if (!summToConvert > 0) {
+//     alert('Error');
+// } else {
+//     alert(`You will get ${result(fromCurrency, toCurrency, summToConvert)}`);
+// }
 
-function currencyCourses() {
-    let USDUAH = 26.3;
-    let USDEUR = 0.85;
-    let EURUAH = 30.7;
-    let EURUSD = 1.17;
-    let UAHUSD = 0.038;
-    let UAHEUR = 0.032;
+/*
+  Есть массив уникальных чисел uniqueNumbers.
 
-    function currencyExchange(fromCurrency, toCurrency, summToConvert) {
-        switch (fromCurrency + toCurrency) {
-            case 'USDUAH':
-                return (parseInt(summToConvert) * USDUAH).toFixed(2) + ' UAH';
-            case 'EURUSD':
-                return (parseInt(summToConvert) * EURUSD).toFixed(2) + ' USD';
-            case 'EURUAH':
-                return (parseInt(summToConvert) * EURUAH).toFixed(2) + ' UAH';
-            case 'USDEUR':
-                return (parseInt(summToConvert) * USDEUR).toFixed(2) + ' EUR';
-            case 'UAHUSD':
-                return (parseInt(summToConvert) * UAHUSD).toFixed(2) + ' USD';
-            case 'UAHEUR':
-                return (parseInt(summToConvert) * UAHEUR).toFixed(2) + ' EUR';
-            default:
-                return "Error";
+  Написать функцию, addUniqueNumbers(...),
+  которая получает произвольное кол-во чисел как аргументы,
+  и добавляет в массив uniqueNumbers только уникальные,
+  а те которые в массиве уже есть игнорирует.
+*/
+
+// const uniqueNumbers  = [2, 1, 4, 9];
+//
+// function addUniqueNumbers(...numbers){
+//     for(let el of numbers) {
+//         if (!uniqueNumbers.includes(el))
+//         {
+//             uniqueNumbers.push(el);
+//         }
+//     }
+// }
+
+// // Вызовы функции для проверки
+// addUniqueNumbers(1, 2, 3);
+// console.log(
+//     uniqueNumbers
+// ); // [2, 1, 4, 9, 3]
+//
+// addUniqueNumbers(12, 2, 3, 19);
+// console.log(
+//     uniqueNumbers
+// ); // [2, 1, 4, 9, 3, 12, 19]
+
+// addUniqueNumbers(4, 5, 12, 3, 1, 2, 8);
+// console.log(
+//     uniqueNumbers
+// ); // [2, 1, 4, 9, 3, 12, 19, 5, 8]
+
+
+/*
+  Создайте функцию removeFromArray(arr),
+  которая получает 1 параметр, исходный массив arr.
+
+  При вызове функции, первым аргументом всегда будет массив чисел,
+  за которым следуют один или несколько аргументов, тоже чисел.
+
+  Удалите все элементы из исходного массива,
+  которые имеют такое же значение, что и аргументы.
+*/
+
+
+function removeFromArray(arr, ...num) {
+    console.log(arr);
+    console.log(num);
+    let newArr= arr.concat(num);
+    console.log(newArr);
+    newArr.map((el,index)=>{
+        if(el !== el[index+1]){
+            return el;
         }
-    }
-    return currencyExchange;
+    })
 }
-let result = currencyCourses();
-if (!summToConvert > 0) {
-    alert('Error');
-} else {
-    alert(`You will get ${result(fromCurrency, toCurrency, summToConvert)}`);
-}
+
+
+// Вызовы функции для проверки
+console.log(
+    removeFromArray([1, 2, 3, 4, 5], 2, 4)
+); // [1, 3, 5]
+//
+// console.log(
+//     removeFromArray([12, 4, 3, 8, 17], 3, 29, 18, 4)
+// ); // [12, 8, 17]
 
 
 

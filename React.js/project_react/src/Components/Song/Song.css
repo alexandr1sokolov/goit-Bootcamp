@@ -16,6 +16,7 @@
     margin-right: 0.8rem;
 }
 .songs-item__discription {
+    position: relative;
     width: 100%;
     border-bottom: 1px solid #3d3d3d;
     padding-bottom: 21px;
@@ -33,6 +34,28 @@
     margin-top: -37px;
     color: #7d7d7d;
 }
+
+.svg-song-container {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    width: 25%;
+    align-items: center;
+    height: 40px;
+}
+.songs-item:hover {
+    background-color: rgba(255,255,255, 0.5);
+}
+.songs-item:hover .svg-song-container {
+    display: flex;
+}
+
+.songs-item:hover .songs-item__singer {
+    color: rgba(255, 0, 0, 0.6);
+    font-weight: 700;
+}
+
 @media (min-width: 480px) {
     .songs-header__list {
         padding: 0 50px;

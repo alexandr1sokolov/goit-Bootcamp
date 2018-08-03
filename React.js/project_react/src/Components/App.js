@@ -16,6 +16,9 @@ class App extends Component {
         albumsData:[],
         searchValue:'',
         isLoading: true,
+        favouriteArtists:[],
+        favouriteSongs:[],
+        favouriteAlbums:[],
     };
 
     componentDidMount() {
@@ -103,6 +106,29 @@ class App extends Component {
         }
     };
 
+    // addFavourite=({target})=>{
+    //     const index = target.title;
+    //     const currentArtist = this.state.artistsData[index];
+    //
+    //     if(!this.state.favouriteArtists.includes(currentArtist)){
+    //         this.setState(prevState=>({favouriteArtists: [currentArtist,...prevState.favouriteArtists]}));
+    //     }
+    // };
+
+
+    addFavourite=({target})=>{
+        const index = target.dataset.index;
+        const arrForAdd = target.dataset.arrForAdd;
+        const check = target.dataset.check;
+
+        const currentItem = this.state[check][index];
+            if(!this.state[arrForAdd].includes(currentItem)){
+                this.setState(prevState=>({[arrForAdd]: [currentItem,...prevState[arrForAdd]]}));
+            }
+    };
+
+
+
     render() {
         const {songsData, artistsData, albumsData, searchValue, isLoading} =this.state;
        return(
@@ -118,9 +144,9 @@ class App extends Component {
                            :
                            <div>
                            <Switch>
-                               <Route exact path='/' render={()=><ArtistPage artistsData={artistsData}/>}/>
-                               <Route path='/songs' render={()=><SongsPage songsData={songsData}/>}/>
-                               <Route path='/albums' render={()=><AlbumPage albumsData={albumsData}/>}/>
+                               <Route exact path='/' render={()=><ArtistPage addFavourite={this.addFavourite} artistsData={artistsData}/>}/>
+                               <Route path='/songs' render={()=><SongsPage addFavourite={this.addFavourite} songsData={songsData}/>}/>
+                               <Route path='/albums' render={()=><AlbumPage addFavourite={this.addFavourite} albumsData={albumsData}/>}/>
                            </Switch>
                        </div>}
 
