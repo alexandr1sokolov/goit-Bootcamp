@@ -617,15 +617,7 @@ console.log(prc('8px','1600px')); // 0.5%
 
 
 function removeFromArray(arr, ...num) {
-    console.log(arr);
-    console.log(num);
-    let newArr= arr.concat(num);
-    console.log(newArr);
-    newArr.map((el,index)=>{
-        if(el !== el[index+1]){
-            return el;
-        }
-    })
+        return arr = arr.filter(el =>(!num.includes(el)? el:null));
 }
 
 
@@ -634,9 +626,9 @@ console.log(
     removeFromArray([1, 2, 3, 4, 5], 2, 4)
 ); // [1, 3, 5]
 //
-// console.log(
-//     removeFromArray([12, 4, 3, 8, 17], 3, 29, 18, 4)
-// ); // [12, 8, 17]
+console.log(
+    removeFromArray([12, 4, 3, 8, 17], 3, 29, 18, 4)
+); // [12, 8, 17]
 
 
 
