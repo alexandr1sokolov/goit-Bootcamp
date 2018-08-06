@@ -7,7 +7,16 @@ import Card from '../Card/Card';
 const ArtistPage =({artistsData, addFavourite})=> {
         return (
             <div className='content'>
-                {artistsData.map((el,index)=><Card addFavourite={addFavourite} url={el.image[2]['#text']}  name={el.name} info={`Listeners: ${(+el.listeners).toLocaleString()}`} type='favouriteArtists' index={index} checkArr='artistsData' key={el.name}/>)}
+                {artistsData.map((el,index)=><Card
+                    addFavourite={addFavourite}
+                    url={el.image[2]['#text']}
+                    name={el.name}
+                    info={`Listeners: ${(+el.listeners).toLocaleString()}`}
+                    type='favouriteArtists'
+                    interesting = 'interestingArtists'
+                    index={index}
+                    checkArr='artistsData'
+                    key={el.name}/>)}
             </div>
         );
 };

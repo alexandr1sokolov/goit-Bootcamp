@@ -7,7 +7,16 @@ import './AlbumPage.css'
 const AlbumPage=({albumsData, addFavourite})=> {
         return (
             <div className='content'>
-                {albumsData.map((el,index)=><Card url={el.image[2]['#text']} name={el.name} info={el.artist} key={el.url+el.name} type='favouriteAlbums' index={index} checkArr='albumsData' addFavourite={addFavourite}/>)}
+                {albumsData.map((el,index)=><Card
+                    url={el.image[2]['#text']}
+                    name={el.name}
+                    info={el.artist}
+                    key={el.url+el.name}
+                    type='favouriteAlbums'
+                    index={index}
+                    checkArr='albumsData'
+                    addFavourite={addFavourite}
+                    interesting = 'interestingAlbums'/>)}
             </div>
         );
 };

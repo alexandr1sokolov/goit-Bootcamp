@@ -8,3 +8,6 @@ export function  fetchData(url){
         })
 }
 
+export function getLocal (key){
+    return JSON.parse(localStorage.getItem(key))!==null?JSON.parse(localStorage.getItem(key)):[]
+}

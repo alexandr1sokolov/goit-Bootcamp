@@ -6,7 +6,7 @@ import Search from '../Components/Search/Search.jsx'
 import SongsPage from '../Components/SongsPage/SongsPage'
 import AlbumPage from '../Components/AlbumPage/AlbumPage'
 import ArtistPage from '../Components/ArtistPage/ArtistPage'
-import {fetchData} from '../helpers/fetch'
+import {fetchData, getLocal} from '../helpers/fetch'
 import './App.css';
 
 class App extends Component {
@@ -19,24 +19,37 @@ class App extends Component {
         favouriteArtists:[],
         favouriteSongs:[],
         favouriteAlbums:[],
+
+        interestingArtists:[],
+        interestingSongs:[],
+        interestingAlbums:[],
     };
 
     componentDidMount() {
 
         fetchData('http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&limit=48&api_key=e900a41307805d11c3527e8aeebf5d4b&format=json')
             .then(data => (
-                this.setState({songsData: data.tracks.track, })
+                this.setState({songsData: data.tracks.track,
+                    favouriteSongs: getLocal('favouriteSongs'),
+                    interestingSongs: getLocal('interestingSongs')
+                })
             ));
 
         fetchData('http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&limit=48&tag=pop&api_key=e900a41307805d11c3527e8aeebf5d4b&format=json')
             .then(data => (
-                this.setState({albumsData: data.albums.album,})
+                this.setState({albumsData: data.albums.album,
+                    favouriteAlbums:  getLocal('favouriteAlbums'),
+                    interestingAlbums: getLocal('interestingAlbums')})
             ));
 
         fetchData('http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&limit=48&api_key=e900a41307805d11c3527e8aeebf5d4b&limit=25&format=json')
             .then(data => (
-                this.setState({ artistsData: data.artists.artist.sort((a,b)=>(+b.listeners)-(+a.listeners)), isLoading: false})
-            ));
+                this.setState({ artistsData: data.artists.artist.sort((a,b)=>(+b.listeners)-(+a.listeners)), isLoading: false,
+                        favouriteArtists: getLocal('favouriteArtists'),
+                        interestingArtists: getLocal('interestingArtists'),
+                    }
+                    )
+            ))
 
         // axios.get('http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=e900a41307805d11c3527e8aeebf5d4b&format=json')
         //     .then(({status,data})=>{
@@ -123,14 +136,17 @@ class App extends Component {
 
         const currentItem = this.state[check][index];
             if(!this.state[arrForAdd].includes(currentItem)){
-                this.setState(prevState=>({[arrForAdd]: [currentItem,...prevState[arrForAdd]]}));
+                this.setState(prevState=>({[arrForAdd]: [currentItem,...prevState[arrForAdd]]}), ()=>{
+                    localStorage.setItem(`${arrForAdd}`, JSON.stringify(this.state[arrForAdd]))
+                });
             }
     };
 
 
 
+
     render() {
-        const {songsData, artistsData, albumsData, searchValue, isLoading} =this.state;
+        const {songsData, artistsData, albumsData, searchValue, isLoading, favouriteArtists, favouriteSongs, favouriteAlbums,interestingArtists, interestingSongs, interestingAlbums} =this.state;
        return(
            <div className='wrapper'>
                <div className="container">
@@ -147,6 +163,14 @@ class App extends Component {
                                <Route exact path='/' render={()=><ArtistPage addFavourite={this.addFavourite} artistsData={artistsData}/>}/>
                                <Route path='/songs' render={()=><SongsPage addFavourite={this.addFavourite} songsData={songsData}/>}/>
                                <Route path='/albums' render={()=><AlbumPage addFavourite={this.addFavourite} albumsData={albumsData}/>}/>
+
+                               <Route path='/favouritesArtists' render={()=><ArtistPage addFavourite={this.addFavourite} artistsData={favouriteArtists}/>}/>
+                               <Route path='/FavouritesSongs' render={()=><SongsPage addFavourite={this.addFavourite} songsData={favouriteSongs}/>}/>
+                               <Route path='/FavouritesAlbums' render={()=><AlbumPage addFavourite={this.addFavourite} albumsData={favouriteAlbums}/>}/>
+
+                               <Route path='/InterestingArtists' render={()=><ArtistPage addFavourite={this.addFavourite} artistsData={interestingArtists}/>}/>
+                               <Route path='/InterestingSongs' render={()=><SongsPage addFavourite={this.addFavourite} songsData={interestingSongs}/>}/>
+                               <Route path='/InterestingAlbums' render={()=><AlbumPage addFavourite={this.addFavourite} albumsData={interestingAlbums}/>}/>
                            </Switch>
                        </div>}
 

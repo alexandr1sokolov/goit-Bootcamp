@@ -6,7 +6,7 @@ import add from './add.svg'
 import fav from './fav.svg'
 // import PropTypes from 'prop-types';
 
-function Song({url, artist, name, addFavourite, index, type, checkArr}) {
+function Song({url, artist, name, addFavourite, index, type, checkArr, interesting}) {
     return (
         <div className="songs-item">
             <figure className="songs-item__figure">
@@ -16,8 +16,21 @@ function Song({url, artist, name, addFavourite, index, type, checkArr}) {
                     <p className="songs-item__singer">{typeof artist === 'object' ? artist.name : artist}</p>
                     <div className="svg-song-container">
                         <img src={play} alt="youtube" className='card__svg'/>
-                        <img src={fav} alt="favorite" className='card__svg' onClick={addFavourite} data-index={index} data-arr-for-add={type} data-check={checkArr}/>
-                        <img src={add} alt="add" className='card__svg'/>
+                        <img
+                            src={fav}
+                            alt="favorite"
+                            className='card__svg'
+                            onClick={addFavourite}
+                            data-index={index}
+                            data-arr-for-add={type}
+                            data-check={checkArr}/>
+                        <img src={add}
+                             alt="add"
+                             className='card__svg'
+                             onClick={addFavourite}
+                             data-index={index}
+                             data-arr-for-add={interesting}
+                             data-check={checkArr}/>
                     </div>
                 </figcaption>
             </figure>

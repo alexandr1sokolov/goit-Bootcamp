@@ -7,7 +7,16 @@ import './SongsPage.css'
 const SongsPage =({songsData, addFavourite})=> {
     return (
         <div className='content'>
-            {songsData.map((el,index)=><Song url={el.image[1]['#text']} artist={el.artist} name={el.name}  key={el.url} type='favouriteSongs' index={index} checkArr='songsData' addFavourite={addFavourite}/>)}
+            {songsData.map((el,index)=><Song
+                url={el.image[1]['#text']}
+                artist={el.artist}
+                name={el.name}
+                key={el.url}
+                type='favouriteSongs'
+                index={index}
+                checkArr='songsData'
+                addFavourite={addFavourite}
+                interesting = 'interestingSongs'/>)}
         </div>
     )
 };

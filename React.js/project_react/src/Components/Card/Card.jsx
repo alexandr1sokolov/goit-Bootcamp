@@ -6,7 +6,7 @@ import play from './play.svg';
 import './Card.css'
 // import PropTypes from 'prop-types';
 
-const Card = ({url, name, info, addFavourite, index, type, checkArr}) => {
+const Card = ({url, name, info, addFavourite, index, type, checkArr, interesting}) => {
 
     return (
         <div className="artist-card">
@@ -16,9 +16,24 @@ const Card = ({url, name, info, addFavourite, index, type, checkArr}) => {
                         <img src={url !== '' ? url : cardImg} alt="artist" className="artist-card__img"/>
                         <div className="card__overlay">
                             <div className="svg-container">
-                                <img src={play} alt="youtube" className='card__svg'/>
-                                <img src={fav} onClick={addFavourite} data-index={index} data-arr-for-add={type} data-check={checkArr} alt="favorite" className='card__svg'/>
-                                <img src={add} alt="add" className='card__svg'/>
+                                <img src={play}
+                                     alt="youtube"
+                                     className='card__svg'/>
+                                <img src={fav}
+                                     onClick={addFavourite}
+                                     data-index={index}
+                                     data-arr-for-add={type}
+                                     data-check={checkArr}
+                                     alt="favorite"
+                                     className='card__svg'/>
+                                <img src={add}
+                                     alt="add"
+                                     className='card__svg'
+                                     onClick={addFavourite}
+                                     data-index={index}
+                                     data-arr-for-add={interesting}
+                                     data-check={checkArr}
+                                />
                             </div>
                         </div>
                     </div>
