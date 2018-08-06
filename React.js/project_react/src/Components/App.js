@@ -146,7 +146,10 @@ class App extends Component {
 
 
     render() {
-        const {songsData, artistsData, albumsData, searchValue, isLoading, favouriteArtists, favouriteSongs, favouriteAlbums,interestingArtists, interestingSongs, interestingAlbums} =this.state;
+        const {songsData, artistsData, albumsData,
+            searchValue, isLoading, favouriteArtists,
+            favouriteSongs, favouriteAlbums,interestingArtists,
+            interestingSongs, interestingAlbums} =this.state;
        return(
            <div className='wrapper'>
                <div className="container">
