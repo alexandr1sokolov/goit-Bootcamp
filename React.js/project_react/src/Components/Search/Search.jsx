@@ -4,12 +4,12 @@ import Chart from '../Chart/Chart'
 import YouTube from "../YouTube/YouTube";
 // import PropTypes from 'prop-types';
 
-const Search = ({onChange,value, searchData, handlerYouTube, youtubeIsActive, videoId, }) => {
+const Search = ({onChange,value, searchData, handlerYouTube, youtubeIsActive, videoId, sidebarHandler}) => {
 
     return (
         <div className='search'>
             {youtubeIsActive? <YouTube videoId={videoId} youTubeClose={handlerYouTube} handlerYouTube={handlerYouTube}/>:null}
-            <span className='burger'>&#9776;</span>
+            <span className='burger' onClick={sidebarHandler}>&#9776;</span>
             <form action="#" method="post" className="search__form" onSubmit={searchData}>
                 <input type="text" className="search__input" value={value} placeholder="Search music" name='searchValue' onChange={onChange}/>
                 <input type="submit" value="search" className="search__btn"/>

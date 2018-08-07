@@ -29,6 +29,7 @@ class App extends Component {
         youtubeIsActive: false,
 
         videoId:'',
+        sidebarShow: false,
     };
 
     componentDidMount() {
@@ -154,18 +155,23 @@ class App extends Component {
                 });
             }
     };
+    sidebarHandler =()=>{
+        this.setState(prevState=>({
+            sidebarShow: !prevState.sidebarShow,
+        }))
+    };
 
     render() {
         const {songsData, artistsData, albumsData,
             searchValue, isLoading, favouriteArtists,
             favouriteSongs, favouriteAlbums,interestingArtists,
-            interestingSongs, interestingAlbums, youtubeIsActive, videoId} = this.state;
+            interestingSongs, interestingAlbums, youtubeIsActive, videoId, sidebarShow} = this.state;
        return(
            <div className='wrapper'>
                <div className="container">
-                   <Sidebar/>
+                   <Sidebar sidebarShow={sidebarShow}/>
                    <main className='main'>
-                       <Search videoId={videoId}  handlerYouTube={this.handlerYouTube} value={searchValue} onChange={this.inputChange} searchData={this.searchData} youtubeIsActive={youtubeIsActive}/>
+                       <Search videoId={videoId}  handlerYouTube={this.handlerYouTube} value={searchValue} onChange={this.inputChange} searchData={this.searchData} youtubeIsActive={youtubeIsActive} sidebarHandler={this.sidebarHandler}/>
                        {isLoading?
                            <div className='loader'>
                                <Loader type="Audio" color="var(--red)" height={100} width={100} />
