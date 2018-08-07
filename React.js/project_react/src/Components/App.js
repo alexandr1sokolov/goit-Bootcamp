@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner';
 import Sidebar from './Sidebar/Sidebar';
-import Search from '../Components/Search/Search.jsx'
-import SongsPage from '../Components/SongsPage/SongsPage'
-import AlbumPage from '../Components/AlbumPage/AlbumPage'
-import ArtistPage from '../Components/ArtistPage/ArtistPage'
-import {fetchData, getLocal} from '../helpers/fetch'
+import Search from '../Components/Search/Search.jsx';
+import SongsPage from '../Components/SongsPage/SongsPage';
+import AlbumPage from '../Components/AlbumPage/AlbumPage';
+import ArtistPage from '../Components/ArtistPage/ArtistPage';
+import {fetchData, getLocal, youtubeFetch} from '../helpers/fetch';
+
+
 import './App.css';
 
 class App extends Component {
@@ -23,6 +25,10 @@ class App extends Component {
         interestingArtists:[],
         interestingSongs:[],
         interestingAlbums:[],
+
+        youtubeIsActive: false,
+
+        videoId:'',
     };
 
     componentDidMount() {
@@ -109,6 +115,14 @@ class App extends Component {
 
     };
 
+    handlerYouTube = ({target}) => {
+        if (target.className === 'close') {this.setState({ youtubeIsActive: false,})}
+        else {
+            const query = target.dataset.query;
+            youtubeFetch(query).then(data => {this.setState({youtubeIsActive: true,videoId: data,})})
+        }
+    };
+
     inputChange =({target})=>{
         const input= target.name;
         const value= target.value.toLowerCase();
@@ -128,7 +142,6 @@ class App extends Component {
     //     }
     // };
 
-
     addFavourite=({target})=>{
         const index = target.dataset.index;
         const arrForAdd = target.dataset.arrForAdd;
@@ -142,20 +155,17 @@ class App extends Component {
             }
     };
 
-
-
-
     render() {
         const {songsData, artistsData, albumsData,
             searchValue, isLoading, favouriteArtists,
             favouriteSongs, favouriteAlbums,interestingArtists,
-            interestingSongs, interestingAlbums} =this.state;
+            interestingSongs, interestingAlbums, youtubeIsActive, videoId} = this.state;
        return(
            <div className='wrapper'>
                <div className="container">
                    <Sidebar/>
                    <main className='main'>
-                       <Search value={searchValue} onChange={this.inputChange} searchData={this.searchData}/>
+                       <Search videoId={videoId}  handlerYouTube={this.handlerYouTube} value={searchValue} onChange={this.inputChange} searchData={this.searchData} youtubeIsActive={youtubeIsActive}/>
                        {isLoading?
                            <div className='loader'>
                                <Loader type="Audio" color="var(--red)" height={100} width={100} />
@@ -163,20 +173,19 @@ class App extends Component {
                            :
                            <div>
                            <Switch>
-                               <Route exact path='/' render={()=><ArtistPage addFavourite={this.addFavourite} artistsData={artistsData}/>}/>
-                               <Route path='/songs' render={()=><SongsPage addFavourite={this.addFavourite} songsData={songsData}/>}/>
-                               <Route path='/albums' render={()=><AlbumPage addFavourite={this.addFavourite} albumsData={albumsData}/>}/>
+                               <Route exact path='/' render={()=><ArtistPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} artistsData={artistsData}/>}/>
+                               <Route path='/songs' render={()=><SongsPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} songsData={songsData}/>}/>
+                               <Route path='/albums' render={()=><AlbumPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} albumsData={albumsData}/>}/>
 
-                               <Route path='/favouritesArtists' render={()=><ArtistPage addFavourite={this.addFavourite} artistsData={favouriteArtists}/>}/>
-                               <Route path='/FavouritesSongs' render={()=><SongsPage addFavourite={this.addFavourite} songsData={favouriteSongs}/>}/>
-                               <Route path='/FavouritesAlbums' render={()=><AlbumPage addFavourite={this.addFavourite} albumsData={favouriteAlbums}/>}/>
+                               <Route path='/favouritesArtists' render={()=><ArtistPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} artistsData={favouriteArtists}/>}/>
+                               <Route path='/FavouritesSongs' render={()=><SongsPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} songsData={favouriteSongs}/>}/>
+                               <Route path='/FavouritesAlbums' render={()=><AlbumPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} albumsData={favouriteAlbums}/>}/>
 
-                               <Route path='/InterestingArtists' render={()=><ArtistPage addFavourite={this.addFavourite} artistsData={interestingArtists}/>}/>
-                               <Route path='/InterestingSongs' render={()=><SongsPage addFavourite={this.addFavourite} songsData={interestingSongs}/>}/>
-                               <Route path='/InterestingAlbums' render={()=><AlbumPage addFavourite={this.addFavourite} albumsData={interestingAlbums}/>}/>
+                               <Route path='/InterestingArtists' render={()=><ArtistPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} artistsData={interestingArtists}/>}/>
+                               <Route path='/InterestingSongs' render={()=><SongsPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} songsData={interestingSongs}/>}/>
+                               <Route path='/InterestingAlbums' render={()=><AlbumPage handlerYouTube={this.handlerYouTube} addFavourite={this.addFavourite} albumsData={interestingAlbums}/>}/>
                            </Switch>
                        </div>}
-
                    </main>
                </div>
            </div>

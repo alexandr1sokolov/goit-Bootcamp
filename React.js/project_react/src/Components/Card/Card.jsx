@@ -6,7 +6,7 @@ import play from './play.svg';
 import './Card.css'
 // import PropTypes from 'prop-types';
 
-const Card = ({url, name, info, addFavourite, index, type, checkArr, interesting}) => {
+const Card = ({url, name, info, addFavourite, index, type, checkArr, interesting, handlerYouTube}) => {
 
     return (
         <div className="artist-card">
@@ -18,7 +18,10 @@ const Card = ({url, name, info, addFavourite, index, type, checkArr, interesting
                             <div className="svg-container">
                                 <img src={play}
                                      alt="youtube"
-                                     className='card__svg'/>
+                                     className='card__svg'
+                                     onClick={handlerYouTube}
+                                     data-query={`${typeof info === 'object'? info.name : info.includes('Listeners')?'':info} ${name}`}
+                                />
                                 <img src={fav}
                                      onClick={addFavourite}
                                      data-index={index}

@@ -1,0 +1,16 @@
+.player{
+    display: block;
+    width: 100%;
+}
+
+.close{
+    font-family: sans-serif;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    padding: 3px 6px;
+    background-color: var(--red);
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+}

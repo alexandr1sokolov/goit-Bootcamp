@@ -4,7 +4,7 @@ import './ArtistPage.css';
 import Card from '../Card/Card';
 // import PropTypes from 'prop-types';
 
-const ArtistPage =({artistsData, addFavourite})=> {
+const ArtistPage =({artistsData, addFavourite, handlerYouTube})=> {
         return (
             <div className='content'>
                 {artistsData.map((el,index)=><Card
@@ -16,7 +16,9 @@ const ArtistPage =({artistsData, addFavourite})=> {
                     interesting = 'interestingArtists'
                     index={index}
                     checkArr='artistsData'
-                    key={el.name}/>)}
+                    key={el.name}
+                    handlerYouTube={handlerYouTube}
+                />)}
             </div>
         );
 };

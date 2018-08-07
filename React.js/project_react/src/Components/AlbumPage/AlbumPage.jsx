@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 import './AlbumPage.css'
 // import PropTypes from 'prop-types';
 
-const AlbumPage=({albumsData, addFavourite})=> {
+const AlbumPage=({albumsData, addFavourite, handlerYouTube})=> {
         return (
             <div className='content'>
                 {albumsData.map((el,index)=><Card
@@ -16,7 +16,9 @@ const AlbumPage=({albumsData, addFavourite})=> {
                     index={index}
                     checkArr='albumsData'
                     addFavourite={addFavourite}
-                    interesting = 'interestingAlbums'/>)}
+                    interesting = 'interestingAlbums'
+                    handlerYouTube={handlerYouTube}
+                />)}
             </div>
         );
 };

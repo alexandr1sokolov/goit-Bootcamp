@@ -1,17 +1,16 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 import './Menu.css';
 import Submenu from '../Sub_menu/Sub_menu'
 import PropTypes from 'prop-types';
-
-
 
 const Menu = ({menu}) => {
     return (
         <ul>
             {menu.map(el => !el.submenu ?
-                <li className="menu__item" key={el.text}>
-                    <a href={el.link} className="menu__link">{el.text}</a>
-                </li>
+                <NavLink to='/' className="menu__link" key={el.text}>
+                    {el.text}
+                </NavLink>
                 :
                 <li className="menu__item" key={el.text}>
                     <a href={el.link} className="menu__link">{el.text}</a>

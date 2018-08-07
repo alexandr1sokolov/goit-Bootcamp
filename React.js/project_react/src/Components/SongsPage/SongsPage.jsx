@@ -4,7 +4,7 @@ import Song from '../Song/Song';
 import './SongsPage.css'
 
 
-const SongsPage =({songsData, addFavourite})=> {
+const SongsPage =({songsData, addFavourite, handlerYouTube})=> {
     return (
         <div className='content'>
             {songsData.map((el,index)=><Song
@@ -16,7 +16,9 @@ const SongsPage =({songsData, addFavourite})=> {
                 index={index}
                 checkArr='songsData'
                 addFavourite={addFavourite}
-                interesting = 'interestingSongs'/>)}
+                interesting = 'interestingSongs'
+                handlerYouTube={handlerYouTube}
+            />)}
         </div>
     )
 };
