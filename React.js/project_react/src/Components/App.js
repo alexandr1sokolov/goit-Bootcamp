@@ -149,10 +149,13 @@ class App extends Component {
         const check = target.dataset.check;
 
         const currentItem = this.state[check][index];
-            if(!this.state[arrForAdd].includes(currentItem)){
+            if(!this.state[arrForAdd].some(el=>(el.url === currentItem.url))){
                 this.setState(prevState=>({[arrForAdd]: [currentItem,...prevState[arrForAdd]]}), ()=>{
                     localStorage.setItem(`${arrForAdd}`, JSON.stringify(this.state[arrForAdd]))
                 });
+            } else{
+               let result = this.state[arrForAdd].filter(el=>(!el.url===currentItem.url)?el:null);
+                this.setState({[arrForAdd]:result});
             }
     };
     sidebarHandler =()=>{

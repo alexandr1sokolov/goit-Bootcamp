@@ -9,10 +9,10 @@ const Search = ({onChange,value, searchData, handlerYouTube, youtubeIsActive, vi
     return (
         <div className='search'>
             {youtubeIsActive? <YouTube videoId={videoId} youTubeClose={handlerYouTube} handlerYouTube={handlerYouTube}/>:null}
-            <span className='burger' onClick={sidebarHandler}>&#9776;</span>
             <form action="#" method="post" className="search__form" onSubmit={searchData}>
                 <input type="text" className="search__input" value={value} placeholder="Search music" name='searchValue' onChange={onChange}/>
                 <input type="submit" value="search" className="search__btn"/>
+                <span className='burger' onClick={sidebarHandler}>&#9776;</span>
             </form>
             <Chart/>
         </div>
