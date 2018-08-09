@@ -1,18 +1,24 @@
 
 import React from 'react';
+import { connect } from 'react-redux';
 import ToDo from '../ToDo/ToDo';
 import './ToDoList.css'
 
 
-const ToDoList = ({inputs, editToDo, deleteToDo})=>
+const ToDoList = (props)=>
   (
     <ul className='list'>
-      {inputs.map((el => <ToDo editToDo={editToDo}
-                               deleteToDo={deleteToDo}
+      {props.inputsArr.map((el => <ToDo
                                input={el.input}
                                id={el.id}
                                key={el.id}/>))}
     </ul>
   );
 
-export default ToDoList;
+function mapStateToProps (state) {
+    return {
+        inputsArr: state.inputsArr
+    }
+}
+
+export default connect(mapStateToProps) (ToDoList);

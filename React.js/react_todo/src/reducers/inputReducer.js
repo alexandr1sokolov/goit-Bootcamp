@@ -1,12 +1,20 @@
 export default function input (state = '', action) {
     switch (action.type) {
-        case 'INCREASE':
-            return state + 1;
-        case 'DECREASE':
-            return state - 1;
-        case 'RESET':
-            return 0;
+        case "UPDATE_INPUT":
+        return action.input;
+
+        case "INPUT_CLEANER":
+            return '';
+
         default:
-            return state;
+            return state
     }
 }
+
+// updateInput =({target})=>{
+//     const input= target.name;
+//     const value= target.value;
+//     this.setState({
+//         [input]:value,
+//     })
+// };
