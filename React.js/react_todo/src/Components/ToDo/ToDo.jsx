@@ -1,80 +1,84 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {input} from '../../actions/inputUpdateAction'
-import Button from '../Button/Button'
+import {input} from '../../actions/inputUpdateAction';
+import {deleteTask,editTask, isActive} from '../../actions/tasksAction';
+import {read, change} from '../../actions/editFieldAction';
+import Button from '../Button/Button';
 import './ToDo.css'
+
+
 
 class ToDo extends Component {
 
-    // state ={
-    //     isModified: false,
-    //     input:this.props.input,
-    // };
 
-    // handleDelete =()=>{
-    //     this.props.deleteToDo(this.props.id)
-    // };
+    editTask = () => {
+        this.props.editTaskFunc(this.props.id, this.props.editField,);
+        this.update();
+    };
 
-    // updateInput =({target})=>{
-    //     const input= target.name;
-    //     const value= target.value;
-    //
-    //     this.setState({
-    //         [input]:value,
-    //     })
-    // };
+    update =()=> {
+        this.props.isActiveToggle(this.props.id)
+    };
+    readValue=()=>{
+        this.props.read(this.props.text);
+        this.update();
+    };
 
-    // toggle =()=> {
-    //     this.setState(prevState=>({
-    //         isModified:!prevState.isModified,
-    //     }))
-    // };
-    //
-    // handleEdit=()=>{
-    //     this.props.editToDo(this.props.id, this.state.input);
-    //     this.toggle();
-    // };
+    changeValue =(e)=>{
+        this.props.change(e.target.value)
+    };
 
     render() {
         return (
-            this.state.isModified?
+            this.props.isActive ?
                 <div>
-                    <li className='task'>
-                        <input className='input' onChange={this.props.updateInput} type="text" value={this.props.input} name='input'/>
+                    <li className='task' id={this.props.id}>
+                        <input className='input' onChange={this.changeValue} type="text" value={this.props.editField}  name='input'/>
                         <div>
-                            <Button onClick={this.handleEdit} text='Save'/>
-                            <Button onClick={this.toggle} text='Cancel'/>
+                            <Button onClick={this.editTask} text='Save'/>
+                            <Button onClick={this.update} text='Cancel'/>
                         </div>
                     </li>
                 </div>
                 :
                 <div >
-                    <li className='task'>
-                        {this.props.input}
+                    <li className='task' id={this.props.id}>
+                        {this.props.text}
                         <div>
-                            <Button onClick={this.toggle} text='Edit'/>
-                            <Button onClick={this.handleDelete} text='Delete'/>
+                            <Button onClick={this.readValue} text='Edit'/>
+                            <Button onClick={this.props.deleteFunc} text='Delete'/>
                         </div>
                     </li>
                 </div>
-        );
-    }
+        )}
 }
 
 function mapStateToProps (state) {
     return {
-        input: state.updateInput
+        editField: state.editField,
     }
 }
 
+
 function mapDispatchToProps (dispatch) {
     return {
-        updateInput: function({target}) {
-            dispatch(input(target.value))
+        deleteFunc:function({target}) {
+            dispatch(deleteTask(+target.closest('.task').id));
+        },
+        editTaskFunc: function (id, input){
+            dispatch(editTask(id, input))
+        },
+        isActiveToggle:function(id) {
+            dispatch(isActive(id));
+        },
+        read:function(text) {
+            dispatch(read(text));
+        },
+        change:function(text) {
+            dispatch(change(text));
         },
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps) (ToDo);
-// export default ToDo;
+export default connect(mapStateToProps, mapDispatchToProps)(ToDo);
+
 
