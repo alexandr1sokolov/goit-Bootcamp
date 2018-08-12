@@ -19,6 +19,7 @@ class ToDo extends Component {
     update =()=> {
         this.props.isActiveToggle(this.props.id)
     };
+
     readValue=()=>{
         this.props.read(this.props.text);
         this.update();
@@ -58,7 +59,6 @@ function mapStateToProps (state) {
         editField: state.editField,
     }
 }
-
 
 function mapDispatchToProps (dispatch) {
     return {
