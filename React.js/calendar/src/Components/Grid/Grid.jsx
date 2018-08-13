@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Day from '../Day/Day';
 import moment from "moment";
-import connect from "react-redux/es/connect/connect";
+import {connect} from "react-redux";
 
 
 class Grid extends Component {

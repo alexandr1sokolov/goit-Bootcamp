@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {increase, decrease, reset} from './actions/counterActions';
+import { reset, incAsync, decAsync} from './actions/counterActions';
+import {galleryAsync} from './actions/galleryAction'
 import './Counter.css';
 
 
@@ -32,14 +33,13 @@ class Counter extends Component {
     // }
 
     render() {
-        // const {counter} = this.state;
-
         return (
             <div className='redux'>
                 <h1>{this.props.counter}</h1>
                 <button onClick={this.props.decrement}>-</button>
                 <button onClick={this.props.reload}>reset</button>
                 <button onClick={this.props.increment}>+</button>
+                <button onClick={this.props.galleryFetch}>FETCH</button>
             </div>
         );
     }
@@ -54,13 +54,16 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
     return {
         increment: function() {
-            dispatch(increase())
+            dispatch(incAsync(1))
         },
         decrement: function(){
-            dispatch(decrease())
+            dispatch(decAsync(1))
         },
         reload: function(){
             dispatch(reset())
+        },
+        galleryFetch(){
+            dispatch(galleryAsync())
         }
     }
 }
