@@ -616,19 +616,25 @@ console.log(prc('8px','1600px')); // 0.5%
 */
 
 
-function removeFromArray(arr, ...num) {
-        return arr = arr.filter(el =>(!num.includes(el)? el:null));
-}
-
-
-// Вызовы функции для проверки
-console.log(
-    removeFromArray([1, 2, 3, 4, 5], 2, 4)
-); // [1, 3, 5]
+// function removeFromArray(arr, ...num) {
+//         return arr = arr.filter(el =>(!num.includes(el)? el:null));
+// }
 //
-console.log(
-    removeFromArray([12, 4, 3, 8, 17], 3, 29, 18, 4)
-); // [12, 8, 17]
+//
+// // Вызовы функции для проверки
+// console.log(
+//     removeFromArray([1, 2, 3, 4, 5], 2, 4)
+// ); // [1, 3, 5]
+// //
+// console.log(
+//     removeFromArray([12, 4, 3, 8, 17], 3, 29, 18, 4)
+// ); // [12, 8, 17]
+
+let arr = [{answer:"a"},{answer:"b"},{answer:"c"}];
+let arr2 = [{answer:"a"},{answer:"d"},{answer:"c"}];
+
+let result =arr.map((el,index)=>el.answer === arr2[index].answer);
+console.log(result);
 
 
 

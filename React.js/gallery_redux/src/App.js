@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Gallery from './Components/Gallery/Gallery';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Search from './Components/Search/Search';
-import {StandartGallerySearchAsync} from './redux/actions/galleryActions'
+import {StandartGallerySearchAsync} from './redux/actions/galleryActions';
+import AuthorList from './Components/AuthorList/AuthorList';
 import './App.css';
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
                         <Search/>
                         <div className='loader'>
                             <Gallery/>
+                            <AuthorList/>
                         </div>
                     </main>
                 </div>
