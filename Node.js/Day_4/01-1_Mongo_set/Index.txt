@@ -1,0 +1,11 @@
+c:/mongodb/data/db - создать такие папочки
+c:/mongodb/log - mongo.log - тут создать этот файл для логов
+
+Запускаем по Виндой от имени администратора терминал - в папке mongodb 
+
+mongod --directoryperdb --dbpath c:\mongodb\data\db --logpath c:\mongodb\log\mongo.log --logappend --rest --install
+
+И нажать - Enter
+
+И теперь можно проверить работает ли наша Монга - введя в консоли - net start MongoDB
+
