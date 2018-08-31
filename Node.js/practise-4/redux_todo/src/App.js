@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import axios from 'axios';
+import axios from 'axios';
 import {input} from './actions/inputUpdateAction';
 import {inputCleaner} from './actions/inputUpdateAction';
-import {addTask} from './actions/tasksAction';
+import {loadTasks,addTask} from './actions/tasksAction';
 
 import './App.css';
 import ToDoList from './Components/ToDoList/ToDoList'
 
 class App extends Component {
 
-    inputHandler =(event)=>{
+
+    componentDidMount(){
+        axios.get('http://localhost:3001/tasks').then(({data,status})=>{if(status === 200){this.props.loadTasksFunc(data)}});
+    }
+
+    addInput = (event) => {
         event.preventDefault();
-        if(this.props.input !== ''){
-            this.props.addInput(this.props.input); this.props.inputCleaner();
-        }
+        let newInput = this.props.input;
+        axios.post('http://localhost:3001/tasks',{task: newInput})
+            .then(({data, status}) => {
+                if (status === 201) {
+                    this.props.addInputFunc(data);
+                }
+            });
     };
+
+
+
+    inputHandler =(event)=>{
+            this.addInput(event); this.props.inputCleaner();
+    };
+
     render() {
         return (
             <div className='container'>
@@ -44,11 +60,14 @@ function mapDispatchToProps (dispatch) {
         inputFunc: function({target}) {
             dispatch(input(target.value))
         },
-        addInput: function(value) {
+        addInputFunc: function(value) {
             dispatch(addTask(value))
         },
         inputCleaner:function() {
             dispatch(inputCleaner())
+        },
+        loadTasksFunc:function(data) {
+            dispatch(loadTasks(data))
         }
     }
 }

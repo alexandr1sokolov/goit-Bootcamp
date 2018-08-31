@@ -6,7 +6,7 @@ import './ToDoList.css'
 
 const ToDoList = (props)=>
   (
-    <ul className='list'>{props.inputsArr.map((el => <ToDo text={el.input} id={el.id} key={el.id} isActive={el.isActive}/>))}</ul>
+    <ul className='list'>{props.inputsArr.map((el => <ToDo text={el.task} id={el._id} key={el._id} isActive={el.isActive}/>))}</ul>
   );
 
 function mapStateToProps (state) {

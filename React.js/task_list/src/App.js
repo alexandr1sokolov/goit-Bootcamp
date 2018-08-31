@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styles from './App.css';
-import TaskList from './Components/TaskList/TaskList'
+import TaskList from './Components/TaskList/TaskList';
 
 class App extends Component {
 

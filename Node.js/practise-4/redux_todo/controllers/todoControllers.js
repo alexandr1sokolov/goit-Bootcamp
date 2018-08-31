@@ -1,4 +1,5 @@
 const db = require('../models/db_functions');
+// mongoose.set('useFindAndModify', false);
 
 module.exports.getTasks = function (req, res) {
     db.gets().then(results => res.json(results))
@@ -12,16 +13,19 @@ module.exports.getTask = function (req, res) {
 };
 
 module.exports.addTask = function (req, res) {
-    db.add(req.body).then(results => res.status(201).json(results))
+    db.add(req.body)
+        .then(results => res.status(201).json(results))
         .catch(err => res.status(400).json({err: err.message}))
 };
 
 module.exports.editTask = function (req, res) {
-    db.update(req.body, req.params.id).then(results => results ? res.json(results) : res.status(400).json({err: 'Task not found'}))
+    db.update(req.body, req.params.id)
+        .then(results => results ? res.json(results) : res.status(400).json({err: 'Task not found'}))
         .catch(err => res.status(400).json({err: err.message}))
 };
 
 module.exports.deleteTask = function (req, res) {
-    db.delete(req.params.id).then(results => results ? res.json(results) : res.status(400).json({err: 'Task not found'}))
+    db.delete(req.params.id)
+        .then(results => results ? res.json(results) : res.status(400).json({err: 'Task not found'}))
         .catch(err => res.status(400).json({err: err.message}))
 };

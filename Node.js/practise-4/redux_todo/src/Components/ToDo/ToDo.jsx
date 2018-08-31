@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import {input} from '../../actions/inputUpdateAction';
 import {deleteTask,editTask, isActive} from '../../actions/tasksAction';
 import {read, change} from '../../actions/editFieldAction';
@@ -10,6 +11,24 @@ import './ToDo.css'
 
 class ToDo extends Component {
 
+    deleteTask = ({target}) => {
+        let id = target.closest('.task').id;
+        console.log(id);
+        axios.delete(`http://localhost:3001/tasks/${id}`).then(({status}) => {
+            if (status === 200) {
+                this.props.deleteFunc(id);
+            }
+        })
+    };
+
+    // editTask = (id, input) => {
+    //     axios.put(`/tasks/${id}`, input)
+    //         .then(({status, data}) => {
+    //             if (status === 200) {
+    //                 this.setState({inputsArr: this.state.inputsArr.map(el => el.id === id ? {...data, input} : el)})
+    //             }
+    //         })
+    // };
 
     editTask = () => {
         this.props.editTaskFunc(this.props.id, this.props.editField,);
@@ -47,7 +66,7 @@ class ToDo extends Component {
                         {this.props.text}
                         <div>
                             <Button onClick={this.readValue} text='Edit'/>
-                            <Button onClick={this.props.deleteFunc} text='Delete'/>
+                            <Button onClick={this.deleteTask} text='Delete'/>
                         </div>
                     </li>
                 </div>
@@ -62,8 +81,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
     return {
-        deleteFunc:function({target}) {
-            dispatch(deleteTask(+target.closest('.task').id));
+        deleteFunc:function(id) {
+            dispatch(deleteTask(id));
         },
         editTaskFunc: function (id, input){
             dispatch(editTask(id, input))
