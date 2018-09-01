@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import {input} from './actions/inputUpdateAction';
-import {inputCleaner} from './actions/inputUpdateAction';
+import {input,inputCleaner} from './actions/inputUpdateAction';
 import {loadTasks,addTask} from './actions/tasksAction';
 
 import './App.css';
@@ -25,8 +24,6 @@ class App extends Component {
                 }
             });
     };
-
-
 
     inputHandler =(event)=>{
             this.addInput(event); this.props.inputCleaner();

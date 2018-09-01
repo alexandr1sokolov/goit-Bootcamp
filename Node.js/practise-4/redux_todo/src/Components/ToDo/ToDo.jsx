@@ -21,19 +21,38 @@ class ToDo extends Component {
         })
     };
 
-    // editTask = (id, input) => {
-    //     axios.put(`/tasks/${id}`, input)
-    //         .then(({status, data}) => {
-    //             if (status === 200) {
-    //                 this.setState({inputsArr: this.state.inputsArr.map(el => el.id === id ? {...data, input} : el)})
-    //             }
-    //         })
-    // };
 
     editTask = () => {
-        this.props.editTaskFunc(this.props.id, this.props.editField,);
-        this.update();
+        axios.put(`http://localhost:3001/tasks/${this.props.id}`, {task:this.props.editField})
+            .then(({status, data}) => {
+                if (status === 200) {
+                    console.log('id :',this.props.id);
+                    console.log('data:',data);
+                    this.props.editTaskFunc(this.props.id, data.task);
+                    this.update();
+                }
+            })
     };
+
+    // editTask = () => {
+    //     let text = () => this.props.editField;
+    //
+    //     async function request() {
+    //         let input = await text();
+    //         console.log(input);
+    //         return input;
+    //     }
+    //
+    //     request().then(changedData => axios.put(`http://localhost:3001/tasks/${this.props.id}`, {task:changedData})
+    //         .then(({status, data}) => {
+    //             console.log(data);
+    //             if (status === 200) {
+    //                 this.props.editTaskFunc(this.props.id, data);
+    //                 this.update();
+    //             }
+    //         }));
+    //
+    // };
 
     update = () => {
         this.props.isActiveToggle(this.props.id)
