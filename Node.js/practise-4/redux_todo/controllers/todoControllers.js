@@ -1,5 +1,6 @@
+const mongoose = require('mongoose');
 const db = require('../models/db_functions');
-// mongoose.set('useFindAndModify', false);
+mongoose.set('useFindAndModify', false);
 
 module.exports.getTasks = function (req, res) {
     db.gets().then(results => res.json(results))

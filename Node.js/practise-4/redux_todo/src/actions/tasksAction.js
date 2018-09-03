@@ -10,11 +10,6 @@ export const addTask = (data) => (
         payload: data
     });
 
-
-
-
-
-
 export const deleteTask = (id) => (
     {
         type: "DELETE_TASK",

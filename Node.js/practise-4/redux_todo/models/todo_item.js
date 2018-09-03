@@ -7,7 +7,6 @@ let todo_item = new Schema(
     {
         task: {
         type: String,
-        match: /\w+/,
         required: [ true, 'Укажите задачу' ]
     },
         isActive: {type: Boolean, default: false}

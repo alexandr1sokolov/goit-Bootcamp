@@ -21,7 +21,6 @@ class ToDo extends Component {
         })
     };
 
-
     editTask = () => {
         axios.put(`http://localhost:3001/tasks/${this.props.id}`, {task:this.props.editField})
             .then(({status, data}) => {
@@ -70,7 +69,6 @@ class ToDo extends Component {
     render() {
         return (
             this.props.isActive ?
-                <div>
                     <li className='task' id={this.props.id}>
                         <input className='input' onChange={this.changeValue} type="text" value={this.props.editField}  name='input'/>
                         <div>
@@ -78,9 +76,7 @@ class ToDo extends Component {
                             <Button onClick={this.update} text='Cancel'/>
                         </div>
                     </li>
-                </div>
                 :
-                <div >
                     <li className='task' id={this.props.id}>
                         {this.props.text}
                         <div>
@@ -88,7 +84,6 @@ class ToDo extends Component {
                             <Button onClick={this.deleteTask} text='Delete'/>
                         </div>
                     </li>
-                </div>
         )}
 }
 
