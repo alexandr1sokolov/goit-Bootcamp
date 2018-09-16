@@ -42,14 +42,9 @@ class App extends Component {
                 <div className="container">
                 <Switch>
                 <Route exact path="/" component={ Home } />
-
-
-                  <Route  path="/register" component={ Register } />
-                  <Route  path="/login" component={ Login } />
-
-
-
-                    <Route component={Page404} />
+                <Route  path="/register" component={ Register } />
+                <Route  path="/login" component={ Login } />
+                <Route component={Page404} />
                 </Switch>
                 </div>
             </div>
