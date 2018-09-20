@@ -1,4 +1,4 @@
-#Sun Sep 09 15:37:40 EEST 2018
-base.0=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\96
+#Thu Sep 20 18:10:54 EEST 2018
+base.0=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\115
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,4 +1,19 @@
-#Sun Sep 09 15:48:11 EEST 2018
-base.0=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\113
+#Thu Sep 20 18:10:57 EEST 2018
+path.1=classes.dex
 path.0=classes.dex
+renamed.5=classes6.dex
+renamed.4=classes5.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+base.5=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\127
+base.4=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\130
+base.3=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\125
+base.2=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\128
+base.1=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\126
+base.0=E\:\\Prog\\gitbash\\goit-Bootcamp\\React.native\\practise\\my-app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\129
+path.5=classes.dex
+path.4=classes.dex
+path.3=classes.dex
+path.2=classes.dex
