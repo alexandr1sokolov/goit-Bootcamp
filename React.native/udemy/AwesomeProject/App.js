@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {StyleSheet, Text, View, TextInput, TouchableHighlight} from "react-native";
 
-// import ListItem from './src/components/ListItem/ListItem';
+import ListItem from './src/components/ListItem/ListItem';
 
 export default class App extends Component {
     state = {
@@ -28,9 +28,9 @@ export default class App extends Component {
     };
 
     render() {
-        // const placesOutput = this.state.places.map((place, i) => (
-        //     <ListItem key={i} placeName={place} />
-        // ));
+        const placesOutput = this.state.places.map((place, i) => (
+            <ListItem key={i} placeName={place} />
+        ));
         return (
             <View style={styles.container}>
                 <View style={styles.inputContainer}>
@@ -47,7 +47,7 @@ export default class App extends Component {
                         <Text> Add </Text>
                     </TouchableHighlight>
                 </View>
-                {/*<View style={styles.listContainer}>{placesOutput}</View>*/}
+                <View style={styles.listContainer}>{placesOutput}</View>
             </View>
         );
     }
