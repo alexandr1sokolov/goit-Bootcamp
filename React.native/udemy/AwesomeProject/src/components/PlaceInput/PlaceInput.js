@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View, TextInput, StyleSheet, TouchableHighlight, Text} from "react-native";
+import {View, TextInput, StyleSheet, TouchableOpacity, Text} from "react-native";
 
 class PlaceInput extends Component {
   state = {
@@ -29,12 +29,12 @@ class PlaceInput extends Component {
           onChangeText={this.placeNameChangedHandler}
           style={styles.placeInput}
         />
-          <TouchableHighlight
+          <TouchableOpacity
               style={styles.placeButton}
               onPress={this.placeSubmitHandler}
           >
               <Text> Add </Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
       </View>
     );
   }
