@@ -6,7 +6,7 @@ import startMainTabs from '../MainTabs/startMainTabs';
 class AuthScreen extends Component {
     loginHandler = () => {
         startMainTabs();
-    };
+    }
 
     render () {
         return (
