@@ -5,6 +5,10 @@ import { connect } from "react-redux";
 import PlaceList from "../../components/PlaceList/PlaceList";
 
 class FindPlaceScreen extends Component {
+    static navigatorStyle = {
+        navBarButtonColor: "#29aaf4"
+    };
+
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
