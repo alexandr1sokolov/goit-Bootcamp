@@ -7,7 +7,10 @@ import {
     TextInput,
     StyleSheet,
     ImageBackground,
-    Dimensions
+    Dimensions,
+    KeyboardAvoidingView,
+    Keyboard,
+    TouchableWithoutFeedback
 } from "react-native";
 
 import startMainTabs from "../MainTabs/startMainTabs";
@@ -156,13 +159,14 @@ class AuthScreen extends Component {
                         onChangeText={val => this.updateInputState("confirmPassword", val)}
                         valid={this.state.controls.confirmPassword.valid}
                         touched={this.state.controls.confirmPassword.touched}
+                        secureTextEntry
                     />
                 </View>
             );
         }
         return (
             <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-                <View style={styles.container}>
+                <KeyboardAvoidingView style={styles.container} behavior="padding">
                     {headingText}
                     <ButtonWithBackground
                         color="#29aaf4"
@@ -170,6 +174,7 @@ class AuthScreen extends Component {
                     >
                         Switch to {this.state.authMode === "login" ? "Sign Up" : "Login"}
                     </ButtonWithBackground>
+                    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                     <View style={styles.inputContainer}>
                         <DefaultInput
                             placeholder="Your E-Mail Address"
@@ -178,6 +183,9 @@ class AuthScreen extends Component {
                             onChangeText={val => this.updateInputState("email", val)}
                             valid={this.state.controls.email.valid}
                             touched={this.state.controls.email.touched}
+                            autoCapitalize="none"
+                            autoCorrect={false}
+                            keyboardType="email-address"
                         />
                         <View
                             style={
@@ -202,11 +210,13 @@ class AuthScreen extends Component {
                                     onChangeText={val => this.updateInputState("password", val)}
                                     valid={this.state.controls.password.valid}
                                     touched={this.state.controls.password.touched}
+                                    secureTextEntry
                                 />
                             </View>
                             {confirmPasswordControl}
                         </View>
                     </View>
+                    </TouchableWithoutFeedback>
                     <ButtonWithBackground
                         color="#29aaf4"
                         onPress={this.loginHandler}
@@ -218,7 +228,7 @@ class AuthScreen extends Component {
                     >
                         Submit
                     </ButtonWithBackground>
-                </View>
+                </KeyboardAvoidingView>
             </ImageBackground>
         );
     }
