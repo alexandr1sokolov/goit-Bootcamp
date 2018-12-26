@@ -72,7 +72,7 @@ export const getPlaces = () => {
       })
       .then(res => res.json())
       .then(parsedRes => {
-        console.log(parsedRes.error);
+        parsedRes.error&& alert(parsedRes.error);
         const places = [];
         for (let key in parsedRes) {
           places.push({
